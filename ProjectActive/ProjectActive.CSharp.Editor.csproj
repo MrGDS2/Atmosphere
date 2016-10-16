@@ -124,11 +124,23 @@
     <Compile Include="Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\TonemappingEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetAsset.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetComponentEditor.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetNoiseGenerator.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetNoisePerlin.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetNoiseWorley.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetPreviewWindow.cs" />
+    <Compile Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetTextureGenerator.cs" />
     <Compile Include="Assets\OVR\Editor\OVRBuild.cs" />
     <Compile Include="Assets\OVR\Editor\OVRMoonlightLoader.cs" />
     <Compile Include="Assets\OVR\Editor\OVRScreenshotWizard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Black Hole\Shader\Resources\BlackHoleDistortion.shader" />
+    <None Include="Assets\GalaxyBox1\instructions.txt" />
+    <None Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetNoiseGenerator.compute" />
+    <None Include="Assets\HeyBlairGames\PlanetTextureGenerator\Runtime\PlanetParallaxSpecular.shader" />
+    <None Include="Assets\HeyBlairGames\PlanetTextureGenerator\Runtime\PlanetSpecular.shader" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
@@ -229,6 +241,12 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\StarNestSkybox\StarNest.shader" />
+    <None Include="Assets\StarNestSkybox\StarNestSkybox.shader" />
+    <None Include="Assets\StarNestSkybox\StarNestSkyboxMask.shader" />
+    <None Include="Assets\StarNestSkybox\StarNestSkyboxReadme.txt" />
+    <None Include="Assets\StarNestSkybox\StarNestSkybox_HSV.shader" />
+    <None Include="Assets\StarNestSkybox\hsv.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
