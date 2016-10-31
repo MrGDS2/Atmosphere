@@ -203,9 +203,6 @@
   <ItemGroup>
     <None Include="Assets\Black Hole\Shader\Resources\BlackHoleDistortion.shader" />
     <None Include="Assets\GalaxyBox1\instructions.txt" />
-    <None Include="Assets\HeyBlairGames\PlanetTextureGenerator\Editor\PlanetNoiseGenerator.compute" />
-    <None Include="Assets\HeyBlairGames\PlanetTextureGenerator\Runtime\PlanetParallaxSpecular.shader" />
-    <None Include="Assets\HeyBlairGames\PlanetTextureGenerator\Runtime\PlanetSpecular.shader" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
@@ -306,12 +303,6 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-    <None Include="Assets\StarNestSkybox\StarNest.shader" />
-    <None Include="Assets\StarNestSkybox\StarNestSkybox.shader" />
-    <None Include="Assets\StarNestSkybox\StarNestSkyboxMask.shader" />
-    <None Include="Assets\StarNestSkybox\StarNestSkyboxReadme.txt" />
-    <None Include="Assets\StarNestSkybox\StarNestSkybox_HSV.shader" />
-    <None Include="Assets\StarNestSkybox\hsv.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
