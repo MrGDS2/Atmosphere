@@ -72,8 +72,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Black Hole\Script\BlackHoleRenderer.cs" />
-    <Compile Include="Assets\Black Hole\Script\MoveCamera.cs" />
     <Compile Include="Assets\GalaxyBox1\examplescene.cs" />
     <Compile Include="Assets\NullifyTransform.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
@@ -104,7 +102,6 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
-    <Compile Include="Assets\Scripts\BasicLookInputModule.cs" />
     <Compile Include="Assets\Scripts\ButtonClickHandler.cs" />
     <Compile Include="Assets\Scripts\ButtonHover.cs" />
     <Compile Include="Assets\Scripts\Clonerock.cs" />
@@ -112,6 +109,8 @@
     <Compile Include="Assets\Scripts\GazeCrosshairOnOff.cs" />
     <Compile Include="Assets\Scripts\GazeInputModule.cs" />
     <Compile Include="Assets\Scripts\GazeInputModuleCrosshair.cs" />
+    <Compile Include="Assets\Scripts\LoadOnclick.cs" />
+    <Compile Include="Assets\Scripts\LookInputModule.cs" />
     <Compile Include="Assets\Scripts\MoveAsteroid.cs" />
     <Compile Include="Assets\Scripts\Movestars.cs" />
     <Compile Include="Assets\Scripts\Moveuser.cs" />
@@ -120,7 +119,6 @@
     <Compile Include="Assets\VRTransform.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Black Hole\Shader\Resources\BlackHoleDistortion.shader" />
     <None Include="Assets\GalaxyBox1\instructions.txt" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
@@ -222,6 +220,7 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\arton_position.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -3,20 +3,19 @@ using System.Collections;
 
 public class ButtonHover : MonoBehaviour {
     public int timeRemaining = 5;
-    public GameObject Object;
-	
+   // public GameObject Object;
+	   public GameObject LoadingImage;
 
-   void Counter()
+   void Counter(int lvl)
     {
         //counts down time remaining for action
         timeRemaining--;
         print(timeRemaining);
         if(timeRemaining<=0)
         {
-            Action();
+            //Action();
             //explostion of asteroids
-
-
+         LoadScene(lvl);
 
             //cancel n
             CancelInvoke("Counter");
@@ -44,4 +43,14 @@ public class ButtonHover : MonoBehaviour {
         CancelInvoke("Counter");
         timeRemaining = 5;
     }
+
+ 
+
+    public void LoadScene(int level)
+    {
+
+        LoadingImage.SetActive(true);
+        Application.LoadLevel(level);
+    }
+
 }

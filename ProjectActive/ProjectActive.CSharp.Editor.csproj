@@ -129,7 +129,6 @@
     <Compile Include="Assets\OVR\Editor\OVRScreenshotWizard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Black Hole\Shader\Resources\BlackHoleDistortion.shader" />
     <None Include="Assets\GalaxyBox1\instructions.txt" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
@@ -231,6 +230,7 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\arton_position.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
