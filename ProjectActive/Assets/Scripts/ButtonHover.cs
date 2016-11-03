@@ -6,7 +6,8 @@ public class ButtonHover : MonoBehaviour {
    // public GameObject Object;
 	   public GameObject LoadingImage;
 
-   void Counter(int lvl)
+
+ public void Counter(int lvl)
     {
         //counts down time remaining for action
         timeRemaining--;
@@ -46,7 +47,7 @@ public class ButtonHover : MonoBehaviour {
 
  
 
-    public void LoadScene(int level)
+    void LoadScene(int level)
     {
 
         LoadingImage.SetActive(true);

@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\GazeCrosshairOnOff.cs" />
     <Compile Include="Assets\Scripts\GazeInputModule.cs" />
     <Compile Include="Assets\Scripts\GazeInputModuleCrosshair.cs" />
+    <Compile Include="Assets\Scripts\IgnoreRayCast.cs" />
     <Compile Include="Assets\Scripts\LoadOnclick.cs" />
     <Compile Include="Assets\Scripts\LookInputModule.cs" />
     <Compile Include="Assets\Scripts\MoveAsteroid.cs" />
