@@ -205,6 +205,13 @@
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
+    <None Include="Assets\OVRInspector\Resources\OVRSettings.txt" />
+    <None Include="Assets\OVRInspector\Resources\Quit.txt" />
+    <None Include="Assets\OVRInspector\Resources\UISettings.txt" />
+    <None Include="Assets\OVRInspector\Shaders\Particle Alpha Blend-AfterTrans-TransAlphaCutoff.shader" />
+    <None Include="Assets\OVRInspector\Shaders\Particle-Alpha-Premultiply-AfterTrans.shader" />
+    <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTest.shader" />
+    <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTestFont.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
