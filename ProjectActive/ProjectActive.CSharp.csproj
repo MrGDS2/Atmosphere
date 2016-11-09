@@ -132,6 +132,7 @@
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeEventTrigger.cs" />
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeScroller.cs" />
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRProgressIndicator.cs" />
+    <Compile Include="Assets\Scripts\AsteroidHide.cs" />
     <Compile Include="Assets\Scripts\ButtonClickHandler.cs" />
     <Compile Include="Assets\Scripts\ButtonHover.cs" />
     <Compile Include="Assets\Scripts\Clonerock.cs" />

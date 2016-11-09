@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class ButtonHover : MonoBehaviour {
-    public int timeRemaining = 5;
+    public int timeRemaining = 2;
    // public GameObject Object;
 	   public GameObject LoadingImage;
+      public int lvl;
 
-
- public void Counter(int lvl)
+void Counter()
     {
         //counts down time remaining for action
         timeRemaining--;
@@ -42,7 +42,7 @@ public class ButtonHover : MonoBehaviour {
     public void MouseOut()
     {
         CancelInvoke("Counter");
-        timeRemaining = 5;
+        timeRemaining=2;
     }
 
  
