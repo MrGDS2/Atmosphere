@@ -5,7 +5,7 @@ public class AsteroidHide : MonoBehaviour {
 
     public int timeRemaining = 5;
     // public GameObject Object;
-    public GameObject []Asteroid;
+    public GameObject Asteroid;
 
 
     public void Counter()
@@ -32,16 +32,16 @@ public class AsteroidHide : MonoBehaviour {
     void Action()
     {
         print("Action fired"); //debug
-        /**Put asteroids in an array when hit**/
+        /**Put asteroids in an array when hit
         foreach (GameObject go in Asteroid)
         {
             bool showing = GUILayout.Toggle(go.activeSelf, go.name);
             if (showing != go.activeSelf)
                 go.SetActive(showing);
 
-        }
+        }**/
         /**Put asteroids in an array when hit**/
-
+        Asteroid.SetActive(false); //hide
     }
     void GUI()
     {
