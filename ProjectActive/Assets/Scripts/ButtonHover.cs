@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonHover : MonoBehaviour {
-    public int timeRemaining = 2;
+public class B: MonoBehaviour {
+    public int timeRemaining=3;
    // public GameObject Object;
 	   public GameObject LoadingImage;
       public int lvl;
+    //string displayTime;
 
 void Counter()
     {
         //counts down time remaining for action
         timeRemaining--;
         print(timeRemaining);
-        if(timeRemaining<=0)
+      //  displayTime =timeRemaining.ToString();
+    
+        if (timeRemaining<=0)
         {
             //Action();
             //explostion of asteroids
@@ -20,7 +23,7 @@ void Counter()
 
             //cancel n
             CancelInvoke("Counter");
-            timeRemaining = 5;
+            timeRemaining =3;
             print("reset counter");
         }
 
@@ -37,6 +40,7 @@ void Counter()
     public void MouseOver()
     {
         InvokeRepeating("Counter", 1, 1);
+
     }
 
     public void MouseOut()

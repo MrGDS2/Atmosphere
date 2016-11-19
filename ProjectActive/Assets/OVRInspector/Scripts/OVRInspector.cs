@@ -328,7 +328,7 @@ public class OVRInspector : MonoBehaviour
         // Setup mouse pointer
         pointer = canvas.GetComponent<OVRMousePointer>();
         currentPointerPanel = leftPanel;
-        LockCursor();
+       LockCursor();
 
 
         // Pre-level stuff
@@ -442,8 +442,8 @@ public class OVRInspector : MonoBehaviour
 #if !UNITY_ANDROID || UNITY_EDITOR
         // Lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        Debug.Log("Lock cursor");
+        Cursor.visible = true;
+        Debug.Log("Lock cursor changed to true");
 #endif
     }
 #endregion
