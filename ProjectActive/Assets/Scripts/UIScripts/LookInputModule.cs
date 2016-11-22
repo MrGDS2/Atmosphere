@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.VR;
 using System.Collections;
 
 
@@ -133,8 +134,8 @@ public class LookInputModule : BaseInputModule
     private PointerEventData GetLookPointerEventData()
     {
         Vector2 lookPosition;
-        lookPosition.x = Screen.width / 2;
-        lookPosition.y = Screen.height / 2;
+        lookPosition.x = VRSettings.eyeTextureWidth / 2;
+        lookPosition.y = VRSettings.eyeTextureHeight / 2;
         if (lookData == null)
         {
             lookData = new PointerEventData(eventSystem);

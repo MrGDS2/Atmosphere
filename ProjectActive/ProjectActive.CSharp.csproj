@@ -132,8 +132,9 @@
     <Compile Include="Assets\Scripts\ActionScripts\AsteroidHide.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\ButtonClickHandler.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\Clonerock.cs" />
+    <Compile Include="Assets\Scripts\ActionScripts\CountExplosion.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\CubeListener.cs" />
-    <Compile Include="Assets\Scripts\ActionScripts\Explosion.cs" />
+    <Compile Include="Assets\Scripts\ActionScripts\ExploidAsteroid.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\IgnoreRayCast.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\MoveAsteroid.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\MoveStarsDust.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Assets\Scripts\UIScripts\LoadOnclick.cs" />
     <Compile Include="Assets\Scripts\UIScripts\LockStarCursor.cs" />
     <Compile Include="Assets\Scripts\UIScripts\LookInputModule.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\Timer.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />

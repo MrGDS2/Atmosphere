@@ -9,6 +9,7 @@ public class randomAsteroids : MonoBehaviour {
     public float spawnWait;
     public float spawnMaxWait;
     public float spawnMinWait;
+   
     public bool stop;
 
     int randAsteroid;
@@ -31,8 +32,9 @@ public class randomAsteroids : MonoBehaviour {
             randAsteroid = Random.Range(0, 3);
 
             /**Spawn position**/
-            Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, Random.Range(-spawnValues.z, spawnValues.z));
-            Instantiate(asteroids[randAsteroid], spawnPosition + transform.TransformPoint (0,0,0), gameObject.transform.rotation);//creates positons and spawns asteroids
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), Random.Range(-spawnValues.y, spawnValues.y), Random.Range(-spawnValues.z, spawnValues.z));
+            Instantiate(asteroids[randAsteroid], spawnPosition + transform.TransformPoint (Random.Range(-spawnValues.x, spawnValues.x),
+                0, Random.Range(-spawnValues.y, spawnValues.y)),Quaternion.identity);//creates positons and spawns asteroids
 
             yield return new WaitForSeconds(spawnWait);
         }

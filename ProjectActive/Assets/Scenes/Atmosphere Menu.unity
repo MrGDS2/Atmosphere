@@ -1369,12 +1369,29 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649082241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b06d7dca05292d948abbe08f734789de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+--- !u!95 &649082243
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 649082241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b07fc7153a4406646a93f5da360918b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &796372088
 Prefab:
   m_ObjectHideFlags: 0
@@ -1384,15 +1401,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -177
+      value: -157
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -143
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 458
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
       propertyPath: m_LocalRotation.x
