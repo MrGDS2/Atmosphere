@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour {
 
         if (goal)
             return;
-        //stops timer
+        //stops timer when asteroid number reached
 
         float t = Time.time - startTime; //gets time in level
 

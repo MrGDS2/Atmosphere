@@ -176,8 +176,8 @@ GameObject:
   - 23: {fileID: 58155846}
   - 135: {fileID: 58155845}
   - 114: {fileID: 58155844}
-  - 82: {fileID: 58155843}
   - 114: {fileID: 58155842}
+  - 82: {fileID: 58155843}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (5)
   m_TagString: Untagged
@@ -211,9 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 58155840}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &58155843
 AudioSource:
   m_ObjectHideFlags: 0
@@ -470,6 +470,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 164978428}
+  - 81: {fileID: 164978429}
   - 114: {fileID: 164978423}
   - 114: {fileID: 164978422}
   - 20: {fileID: 164978426}
@@ -623,6 +624,13 @@ RectTransform:
   m_AnchoredPosition: {x: -41.229, y: 35.204}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!81 &164978429
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 164978421}
+  m_Enabled: 1
 --- !u!1 &182255410
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,8 +643,8 @@ GameObject:
   - 23: {fileID: 182255416}
   - 135: {fileID: 182255415}
   - 114: {fileID: 182255414}
-  - 82: {fileID: 182255413}
   - 114: {fileID: 182255412}
+  - 82: {fileID: 182255413}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (6)
   m_TagString: Untagged
@@ -670,9 +678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 182255410}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &182255413
 AudioSource:
   m_ObjectHideFlags: 0
@@ -909,10 +917,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  asteroid: {fileID: 294763392}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  asteroid: {fileID: 1835984728}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &294763395
 AudioSource:
   m_ObjectHideFlags: 0
@@ -922,7 +930,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1162,10 +1170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  asteroid: {fileID: 313385899}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  asteroid: {fileID: 1835984728}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &313385902
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1368,8 +1376,8 @@ GameObject:
   - 23: {fileID: 357271750}
   - 135: {fileID: 357271749}
   - 114: {fileID: 357271748}
-  - 82: {fileID: 357271747}
   - 114: {fileID: 357271746}
+  - 82: {fileID: 357271747}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (4)
   m_TagString: Untagged
@@ -1403,9 +1411,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 357271744}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &357271747
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2012,9 +2020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 712571079}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &712571082
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2147,6 +2155,17 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 2100000, guid: faf502faf7e5c414d89caa4b6b589720,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 712571081}
+          m_MethodName: Gazeoff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2358,7 +2377,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 871900398}
-  - 81: {fileID: 871900400}
   - 20: {fileID: 871900399}
   m_Layer: 0
   m_Name: CenterEyeAnchor
@@ -2416,14 +2434,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &871900400
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: 126d619cf4daa52469682f85c1378b4a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871900397}
-  m_Enabled: 1
 --- !u!1 &878935448
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,8 +3306,8 @@ GameObject:
   - 23: {fileID: 1202764402}
   - 135: {fileID: 1202764401}
   - 114: {fileID: 1202764400}
-  - 82: {fileID: 1202764399}
   - 114: {fileID: 1202764398}
+  - 82: {fileID: 1202764399}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (3)
   m_TagString: Untagged
@@ -3331,9 +3341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1202764396}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!82 &1202764399
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3448,6 +3458,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202764399}
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3609,7 +3631,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1370152756}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c106bb3ac3d51d34caa499e82e8f0d80, type: 3}
@@ -4388,8 +4410,8 @@ GameObject:
   - 23: {fileID: 1835984731}
   - 135: {fileID: 1835984730}
   - 114: {fileID: 1835984733}
-  - 82: {fileID: 1835984734}
   - 114: {fileID: 1835984729}
+  - 82: {fileID: 1835984734}
   m_Layer: 0
   m_Name: asteroid 3DSLarge
   m_TagString: Untagged
@@ -4410,9 +4432,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1835984728}
-  lookingTime: 1.5
-  CountAsteroids: {fileID: 2067898}
-  Bang: {fileID: 0}
+  lookingTime: 0.5
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidCounter: {fileID: 2067898}
 --- !u!135 &1835984730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5092,7 +5114,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 2049081487
+  randomSeed: -2007165065
   InitialModule:
     serializedVersion: 2
     enabled: 1
