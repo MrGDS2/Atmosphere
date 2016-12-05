@@ -117,16 +117,16 @@ public class OVRGazePointer : MonoBehaviour {
             
 
             float strengthFromShowRequest;
-            if (hideByDefault)
+            strengthFromShowRequest = 1;
+          /**  if (hideByDefault)
             {
                 // fade the cursor out with time
                 strengthFromShowRequest =  Mathf.Clamp01(1 - (Time.time - lastShowRequestTime) / showTimeoutPeriod);
-            }
-            else
-            {
+            }**/
+            
                 // keep it fully visible
-                strengthFromShowRequest = 1;
-            }
+            
+            
 
             // Now consider factors requesting pointer to be hidden
             float strengthFromHideRequest;
@@ -154,6 +154,8 @@ public class OVRGazePointer : MonoBehaviour {
 
     public void Awake()
     {
+
+    
         currentScale = 1;
         // Only allow one instance at runtime.
         if (_instance != null && _instance != this)
@@ -174,16 +176,16 @@ public class OVRGazePointer : MonoBehaviour {
     {
         // Move the gaze cursor to keep it in the middle of the view
         transform.position = cameraRig.centerEyeAnchor.transform.position + cameraRig.centerEyeAnchor.transform.forward * depth;
-
-        // Should we show or hide the gaze cursor?
+            Show();
+        /** Should we show or hide the gaze cursor?
         if (visibilityStrength == 0 && !hidden)
         {
             Hide();
         }
         else if (visibilityStrength > 0 && hidden)
         {
-            Show();
-        }
+            
+        }**/
 	}
 
     /// <summary>
@@ -254,11 +256,11 @@ public class OVRGazePointer : MonoBehaviour {
     /// </summary>
     public void RequestHide()
     {
-        if (!dimOnHideRequest)
+       /** if (!dimOnHideRequest)
         {
             Hide();
-        }
-        lastHideRequestTime = Time.time;
+        }**/
+       // lastHideRequestTime = Time.time;
     }
 
     /// <summary>

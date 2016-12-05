@@ -29,6 +29,7 @@ public class GazeExplosion : MonoBehaviour
 
     }
 
+    
     void BOOM()
     {
         // UpdateAsteroidCount();
@@ -39,28 +40,44 @@ public class GazeExplosion : MonoBehaviour
             lookingTime--;
 
             print("GAZE TIME ==>" + lookingTime);
+          
+                if (lookingTime <= 0)
+                {
+                    /***Explosion  after gaze time of x number of secs
+                    //Bang sound effect won't work?
+                    Bang = GetComponent<AudioSource>();
+                    Bang.clip = soundclip;
+                    Bang.Play(); **/
 
-            if (lookingTime <= 0)
-            {
-                /***Explosion  after gaze time of x number of secs **/
-                //Bang sound effect won't work?
-                Bang = GetComponent<AudioSource>();
-                Bang.clip = soundclip;
-                Bang.Play();
+                    Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
+                    Destroy(asteroid);
+                    Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
+                    UpdateAsteroidTracker(Counter.ToString());  //problem?
+               /** if (asteroid.tag.Equals("SpecialAsteroid"))
+                {
+                    Destroy(asteroid);
+                    Counter =  Counter += 2;
+                    Debug.Log(asteroid.name + "GoldenNugget" + Counter);
+                    UpdateAsteroidTracker(Counter.ToString());
+                } **/
                
-                Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
-               
-                Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-                AsteroidCounter.text = Counter.ToString();//problem?
-                Destroy(asteroid);
+                
+
+
+                     
+              
+                }
+            
+           
             }
+           
 
         }
 
 
 
 
-    }
+ 
 
 
     /***Counts only on Gaze **/
@@ -81,9 +98,15 @@ public class GazeExplosion : MonoBehaviour
     }
 
 
+    void UpdateAsteroidTracker(string update)
+    {
+        AsteroidCounter.text =update;
+    }
+   }
 
 
 
 
 
-}
+
+

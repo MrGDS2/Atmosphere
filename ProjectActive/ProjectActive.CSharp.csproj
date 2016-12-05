@@ -149,6 +149,7 @@
     <Compile Include="Assets\Scripts\UIScripts\LoadOnclick.cs" />
     <Compile Include="Assets\Scripts\UIScripts\LockStarCursor.cs" />
     <Compile Include="Assets\Scripts\UIScripts\LookInputModule.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\Rectical.cs" />
     <Compile Include="Assets\Scripts\UIScripts\Timer.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
