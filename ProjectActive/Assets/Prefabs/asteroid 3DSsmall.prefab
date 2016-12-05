@@ -22,8 +22,9 @@ GameObject:
   - 33: {fileID: 33000011333556584}
   - 23: {fileID: 23000011831450002}
   - 135: {fileID: 135000012379609060}
-  - 114: {fileID: 114000010638134620}
+  - 114: {fileID: 114000010068847086}
   - 114: {fileID: 114000011525708288}
+  - 114: {fileID: 114000012423202580}
   m_Layer: 0
   m_Name: asteroid 3DSsmall
   m_TagString: Untagged
@@ -80,7 +81,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013453148198}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
---- !u!114 &114000010638134620
+--- !u!114 &114000010068847086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -131,6 +132,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 23000011831450002}
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: faf502faf7e5c414d89caa4b6b589720,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 114000011525708288}
           m_MethodName: Gazeoff
           m_Mode: 1
@@ -161,6 +174,18 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 0}
+--- !u!114 &114000012423202580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013453148198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65a614b23686de41842b7e93fbf3249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 80
 --- !u!135 &135000012379609060
 SphereCollider:
   m_ObjectHideFlags: 1

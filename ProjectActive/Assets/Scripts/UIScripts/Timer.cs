@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
     public Text AtmosphereTimer;
-    private float startTime;
     public GameObject LoadingImage;
+    private float startTime;
+    
     private bool goal = false;
     private int numbergoal;
 	// Use this for initialization

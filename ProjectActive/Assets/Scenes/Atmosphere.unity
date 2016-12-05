@@ -350,10 +350,10 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164978421}
-  m_LocalRotation: {x: -0.0052341204, y: 0.9915119, z: 0.1165945, w: -0.057293758}
-  m_LocalPosition: {x: 0, y: 0, z: 611.0173}
+  m_LocalRotation: {x: -0.00008561368, y: 0.99642605, z: 0.08362812, w: -0.0118955085}
+  m_LocalPosition: {x: 0, y: 0, z: 494}
   m_LocalScale: {x: 0.4068835, y: 0.46722472, z: 0.6308349}
-  m_LocalEulerAnglesHint: {x: -13.278001, y: -173.40901, z: -1.3570001}
+  m_LocalEulerAnglesHint: {x: -9.538, y: -178.662, z: -0.12200001}
   m_Children:
   - {fileID: 609425352}
   - {fileID: 884846327}
@@ -362,7 +362,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -14, y: 26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!81 &164978429
@@ -400,7 +400,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 182255410}
   m_LocalRotation: {x: 0.707101, y: 0.0028760976, z: 0.0028760976, w: 0.707101}
-  m_LocalPosition: {x: 114, y: -5, z: -219}
+  m_LocalPosition: {x: -56, y: 263, z: 139}
   m_LocalScale: {x: 4, y: 4.000003, z: 4.000003}
   m_LocalEulerAnglesHint: {x: 89.51501, y: 90.00001, z: 90.00001}
   m_Children: []
@@ -522,7 +522,7 @@ MonoBehaviour:
           m_MethodName: set_material
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: b9ff41e40ef08194494509ffbe8a4d8b,
+            m_ObjectArgument: {fileID: 2100000, guid: 40ddc0ebb3b1b094e85c89b746eba0a6,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
@@ -640,7 +640,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357271744}
   m_LocalRotation: {x: 0.707101, y: 0.0028760976, z: 0.0028760976, w: 0.707101}
-  m_LocalPosition: {x: -445, y: 328, z: 0}
+  m_LocalPosition: {x: -257, y: 329, z: 0}
   m_LocalScale: {x: 4, y: 4.0000114, z: 4.0000114}
   m_LocalEulerAnglesHint: {x: 89.51501, y: 90.00001, z: 90.00001}
   m_Children: []
@@ -2467,14 +2467,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068081106}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 339a17cccfb34e4498ccc264687ccf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
   - {fileID: 1000012366700606, guid: cdb5d8ecd3d6e8c47b4ad38426238c73, type: 2}
-  - {fileID: 1000011633851956, guid: 60ebdf10f0d5f634d90845086488f26d, type: 2}
+  - {fileID: 1000013453148198, guid: 918ec0c2c7e787b4c8ca6e0b6ff51ebe, type: 2}
   - {fileID: 1000010480271942, guid: 4e7d6b2dd243aa947902f8bce675ded4, type: 2}
   spawnValues: {x: 10, y: 0, z: 2}
   startWait: 1

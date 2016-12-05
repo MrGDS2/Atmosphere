@@ -52,7 +52,7 @@ public class GazeExplosion : MonoBehaviour
                     Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
                     Destroy(asteroid);
                     Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-                    UpdateAsteroidTracker(Counter.ToString());  //problem?
+                AsteroidCounter.text = Counter.ToString();  //problem?
                /** if (asteroid.tag.Equals("SpecialAsteroid"))
                 {
                     Destroy(asteroid);
@@ -98,10 +98,10 @@ public class GazeExplosion : MonoBehaviour
     }
 
 
-    void UpdateAsteroidTracker(string update)
+   /** void UpdateAsteroidTracker(string update)
     {
         AsteroidCounter.text =update;
-    }
+    }**/
    }
 
 

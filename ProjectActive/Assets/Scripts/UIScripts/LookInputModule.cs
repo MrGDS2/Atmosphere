@@ -1,467 +1,169 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using UnityEngine.VR;
 using System.Collections;
+using UnityEngine.VR;
 
+// The MIT License (MIT)
+//
+// Copyright (c) 2014, Unity Technologies & Google, Inc.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+//   The above copyright notice and this permission notice shall be included in
+//   all copies or substantial portions of the Software.
+//
+//   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//   THE SOFTWARE.
 
-// Written by user "css" on Oculus Developer forum
-// https://forums.oculus.com/viewtopic.php?f=37&t=16710
+using UnityEngine;
+using UnityEngine.EventSystems;
 
+// An implementation of the BaseInputModule that uses the player's gaze and the magnet trigger
+// as a raycast generator.  To use, attach to the scene's EventSystem object.  Set the Canvas
+// object's Render Mode to World Space, and set its Event Camera to a (mono) camera that is
+// controlled by a CardboardHead.  If you'd like gaze to work with 3D scene objects, add a
+// PhysicsRaycaster to the gazing camera, and add a component that implements one of the Event
+// interfaces (EventTrigger will work nicely).  The objects must have colliders too.
 public class LookInputModule : BaseInputModule
 {
+    [Tooltip("Whether gaze input is active in VR Mode only (true), or all the time (false).")]
+    public bool vrModeOnly = false;
 
-    // singleton makes it easy to access the instanced fields from other code without needing a pointer
-    // e.g.  if (LookInputModule.singleton != null && LookInputModule.singleton.controlAxisUsed) ...
-    private static LookInputModule _singleton;
-    public static LookInputModule singleton
+    [Tooltip("Optional object to place at raycast intersections as a 3D cursor. " +
+             "Be sure it is on a layer that raycasts will ignore.")]
+    public GameObject cursor;
+
+    // Time in seconds between the pointer down and up events sent by a magnet click.
+    // Allows time for the UI elements to make their state transitions.
+    [HideInInspector]
+    public float clickTime = 0.1f;  // Based on default time for a button to animate to Pressed.
+
+    // The pixel through which to cast rays, in viewport coordinates.  Generally, the center
+    // pixel is best, assuming a monoscopic camera is selected as the Canvas' event camera.
+    [HideInInspector]
+    public Vector2 hotspot = new Vector2(0.5f, 0.5f);
+
+    private PointerEventData pointerData;
+
+  
+
+    public override void DeactivateModule()
     {
-        get
+        base.DeactivateModule();
+        if (pointerData != null)
         {
-            return _singleton;
+            HandlePendingClick();
+            HandlePointerExitAndEnter(pointerData, null);
+            pointerData = null;
+        }
+        eventSystem.SetSelectedGameObject(null, GetBaseEventData());
+        if (cursor != null)
+        {
+            cursor.SetActive(false);
         }
     }
 
-    // name of button to use for click/submit
-    public string submitButtonName = "Fire1";
-
-    // name of axis to use for scrolling/sliders
-    public string controlAxisName = "Horizontal";
-
-    // smooth axis - default UI move handlers do things in steps, meaning you can smooth scroll a slider or scrollbar
-    // with axis control. This option allows setting value of scrollbar/slider directly as opposed to using move handler
-    // to avoid this
-    public bool useSmoothAxis = true;
-    // multiplier controls how fast slider/scrollbar moves with respect to input axis value
-    public float smoothAxisMultiplier = 0.01f;
-    // if useSmoothAxis is off, this next field controls how many steps per second are done when axis is on
-    public float steppedAxisStepsPerSecond = 10f;
-
-    // guiRaycastHit is helpful if you have other places you want to use look input outside of UI system
-    // you can use this to tell if the UI raycaster hit a UI element
-    private bool _guiRaycastHit;
-    public bool guiRaycastHit
+    public override bool IsPointerOverGameObject(int pointerId)
     {
-        get
-        {
-            return _guiRaycastHit;
-        }
+        return pointerData != null && pointerData.pointerEnter != null;
     }
 
-    // controlAxisUsed is helpful if you use same axis elsewhere
-    // you can use this boolean to see if the UI used the axis control or not
-    // if something is selected and takes move event, then this will be set
-    private bool _controlAxisUsed;
-    public bool controlAxisUsed
+    public override void Process()
     {
-        get
-        {
-            return _controlAxisUsed;
-        }
+        CastRayFromGaze();
+        UpdateCurrentObject();
+        PlaceCursor();
+       // HandlePendingClick();
+       // HandleTrigger();
     }
 
-    // buttonUsed is helpful if you use same button elsewhere
-    // you can use this boolean to see if the UI used the button press or not
-    private bool _buttonUsed;
-    public bool buttonUsed
+    private void CastRayFromGaze()
     {
-        get
+        if (pointerData == null)
         {
-            return _buttonUsed;
+            pointerData = new PointerEventData(eventSystem);
         }
+        pointerData.Reset();
+        pointerData.position = new Vector2(hotspot.x * VRSettings.eyeTextureWidth /2,hotspot.y * VRSettings.eyeTextureHeight/2);
+        eventSystem.RaycastAll(pointerData, m_RaycastResultCache);
+        pointerData.pointerCurrentRaycast = FindFirstRaycast(m_RaycastResultCache);
+        m_RaycastResultCache.Clear();
     }
 
-    public enum Mode { Pointer, Submit };
-    // LookInputModule supports 2 modes:
-    // 1 - Pointer
-    //     Module acts a lot like a mouse with pointer locked where you look. Where you look is where 
-    //     pointerDown/pointerUp/pointerClick events are used
-    //     useCursor is recommended for correct precision
-    //     axis control of sliders/scrollbars/etc. is optional
-    // 2 - Submit
-    //     controls are selected and manipulated with axis control only
-    //     submit/select events are used
-    //     in this mode you can't click along a slider/scrollbar to set the slider/scroll value
-    //     useLookDrag option is ignored
-    public Mode mode = Mode.Pointer;
-
-    // useLookDrag allows you to use look-based drag and drop (see example)
-    // and also drag sliders/scrollbars based on where you are looking
-    // only works if usePointerMethod is true
-    public bool useLookDrag = true;
-    public bool useLookDragSlider = true;
-    public bool useLookDragScrollbar = false;
-
-    // useCursor only applies when usePointerMethod is true
-    // the cursor works like a mouse pointer so you can see exactly where you are clicking
-    // not recommended to turn off
-    public bool useCursor = true;
-
-    // the UI element to use for the cursor
-    // the cursor will appear on the plane of the current UI element being looked at - so it adjusts to depth correctly
-    // recommended to use a simple Image component (typical mouse cursor works pretty well) and you MUST add the 
-    // Unity created IgnoreRaycast component (script included in example) so that the cursor will not be see by the UI
-    // event system
-    public RectTransform cursor;
-
-    // when UI element is selected this is the color it gets
-    // useful for when want to use axis input to control sliders/scrollbars so you can see what is being
-    // manipulated
-    public bool useSelectColor = true;
-    public bool useSelectColorOnButton = false;
-    public bool useSelectColorOnToggle = false;
-    public Color selectColor = Color.blue;
-
-    // ignore input when looking away from all UI elements
-    // useful if you want to use buttons/axis for other controls
-    public bool ignoreInputsWhenLookAway = true;
-
-    // deselect when looking away from all UI elements
-    // useful if you want to use axis for other controls
-    public bool deselectWhenLookAway = false;
-
-    // interal vars
-    private PointerEventData lookData;
-    private Color currentSelectedNormalColor;
-    private bool currentSelectedNormalColorValid;
-    private Color currentSelectedHighlightedColor;
-    private GameObject currentLook;
-    private GameObject currentPressed;
-    private GameObject currentDragging;
-    private float nextAxisActionTime;
-
-    // use screen midpoint as locked pointer location, enabling look location to be the "mouse"
-    private PointerEventData GetLookPointerEventData()
+    private void UpdateCurrentObject()
     {
-        Vector2 lookPosition;
-        lookPosition.x = VRSettings.eyeTextureWidth / 2;
-        lookPosition.y = VRSettings.eyeTextureHeight / 2;
-        if (lookData == null)
+        // Send enter events and update the highlight.
+        var go = pointerData.pointerCurrentRaycast.gameObject;
+        HandlePointerExitAndEnter(pointerData, go);
+        // Update the current selection, or clear if it is no longer the current object.
+        var selected = ExecuteEvents.GetEventHandler<ISelectHandler>(go);
+        if (selected == eventSystem.currentSelectedGameObject)
         {
-            lookData = new PointerEventData(eventSystem);
-        }
-        lookData.Reset();
-        lookData.delta = Vector2.zero;
-        lookData.position = lookPosition;
-        lookData.scrollDelta = Vector2.zero;
-        eventSystem.RaycastAll(lookData, m_RaycastResultCache);
-        lookData.pointerCurrentRaycast = FindFirstRaycast(m_RaycastResultCache);
-        if (lookData.pointerCurrentRaycast.gameObject != null)
-        {
-            _guiRaycastHit = true;
+            ExecuteEvents.Execute(eventSystem.currentSelectedGameObject, GetBaseEventData(),
+                                  ExecuteEvents.updateSelectedHandler);
         }
         else
         {
-            _guiRaycastHit = false;
-        }
-        m_RaycastResultCache.Clear();
-        return lookData;
-    }
-
-    // update the cursor location and whether it is enabled
-    // this code is based on Unity's DragMe.cs code provided in the UI drag and drop example
-    private void UpdateCursor(PointerEventData lookData)
-    {
-        if (cursor != null)
-        {
-            if (useCursor)
-            {
-                if (lookData.pointerEnter != null)
-                {
-                    RectTransform draggingPlane = lookData.pointerEnter.GetComponent<RectTransform>();
-                    Vector3 globalLookPos;
-                    if (RectTransformUtility.ScreenPointToWorldPointInRectangle(draggingPlane, lookData.position, lookData.enterEventCamera, out globalLookPos))
-                    {
-                        cursor.gameObject.SetActive(true);
-                        cursor.position = globalLookPos;
-                        cursor.rotation = draggingPlane.rotation;
-                    }
-                    else
-                    {
-                        cursor.gameObject.SetActive(false);
-                    }
-                }
-                else
-                {
-                    cursor.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                cursor.gameObject.SetActive(false);
-            }
+            eventSystem.SetSelectedGameObject(null, pointerData);
         }
     }
 
-    // sets color of selected UI element and saves current color so it can be restored on deselect
-    private void SetSelectedColor(GameObject go)
+    private void PlaceCursor()
     {
-        if (useSelectColor)
+        if (cursor == null)
+            return;
+        var go = pointerData.pointerCurrentRaycast.gameObject;
+        cursor.SetActive(go != null);
+        if (cursor.activeInHierarchy)
         {
-            if (!useSelectColorOnButton && go.GetComponent<Button>())
-            {
-                currentSelectedNormalColorValid = false;
-                return;
-            }
-            if (!useSelectColorOnToggle && go.GetComponent<Toggle>())
-            {
-                currentSelectedNormalColorValid = false;
-                return;
-            }
-            Selectable s = go.GetComponent<Selectable>();
-            if (s != null)
-            {
-                ColorBlock cb = s.colors;
-                currentSelectedNormalColor = cb.normalColor;
-                currentSelectedNormalColorValid = true;
-                currentSelectedHighlightedColor = cb.highlightedColor;
-                cb.normalColor = selectColor;
-                cb.highlightedColor = selectColor;
-                s.colors = cb;
-            }
+            Camera cam = pointerData.enterEventCamera;
+            // Note: rays through screen start at near clipping plane.
+            float dist = pointerData.pointerCurrentRaycast.distance + cam.nearClipPlane;
+            cursor.transform.position = cam.transform.position + cam.transform.forward * dist;
         }
     }
 
-    // restore color of previously selected UI element
-    private void RestoreColor(GameObject go)
+    private void HandlePendingClick()
     {
-        if (useSelectColor && currentSelectedNormalColorValid)
-        {
-            Selectable s = go.GetComponent<Selectable>();
-            if (s != null)
-            {
-                ColorBlock cb = s.colors;
-                cb.normalColor = currentSelectedNormalColor;
-                cb.highlightedColor = currentSelectedHighlightedColor;
-                s.colors = cb;
-            }
-        }
+      
+// Send pointer up and click events.
+
+        
+        ExecuteEvents.Execute(pointerData.pointerPress, pointerData, ExecuteEvents.pointerUpHandler);
+        ExecuteEvents.Execute(pointerData.pointerPress, pointerData, ExecuteEvents.pointerClickHandler);
+
+        // Clear the click state.
+        pointerData.pointerPress = null;
+        pointerData.rawPointerPress = null;
+        pointerData.eligibleForClick = false;
+        pointerData.clickCount = 0;
     }
 
-    // clear the current selection
-    private void ClearSelection()
+    private void HandleTrigger()
     {
-        if (eventSystem.currentSelectedGameObject)
-        {
-            RestoreColor(eventSystem.currentSelectedGameObject);
-            eventSystem.SetSelectedGameObject(null);
-        }
-    }
+      
+        var go = pointerData.pointerCurrentRaycast.gameObject;
 
-    // select a game object
-    private void Select(GameObject go)
-    {
-        ClearSelection();
-        if (ExecuteEvents.GetEventHandler<ISelectHandler>(go))
-        {
-            SetSelectedColor(go);
-            eventSystem.SetSelectedGameObject(go);
-        }
-    }
+        // Send pointer down event.
+        pointerData.pressPosition = pointerData.position;
+        pointerData.pointerPressRaycast = pointerData.pointerCurrentRaycast;
+        pointerData.pointerPress =
+            ExecuteEvents.ExecuteHierarchy(go, pointerData, ExecuteEvents.pointerDownHandler)
+            ?? ExecuteEvents.GetEventHandler<IPointerClickHandler>(go);
 
-    // send update event to selected object
-    // needed for InputField to receive keyboard input
-    private bool SendUpdateEventToSelectedObject()
-    {
-        if (eventSystem.currentSelectedGameObject == null)
-            return false;
-        BaseEventData data = GetBaseEventData();
-        ExecuteEvents.Execute(eventSystem.currentSelectedGameObject, data, ExecuteEvents.updateSelectedHandler);
-        return data.used;
-    }
-
-    // Process is called by UI system to process events
-    public override void Process()
-    {
-        _singleton = this;
-
-        // send update events if there is a selected object - this is important for InputField to receive keyboard events
-        SendUpdateEventToSelectedObject();
-
-        // see if there is a UI element that is currently being looked at
-        PointerEventData lookData = GetLookPointerEventData();
-        currentLook = lookData.pointerCurrentRaycast.gameObject;
-
-        // deselect when look away
-        if (deselectWhenLookAway && currentLook == null)
-        {
-            ClearSelection();
-        }
-
-        // handle enter and exit events (highlight)
-        // using the function that is already defined in BaseInputModule
-        HandlePointerExitAndEnter(lookData, currentLook);
-
-        // update cursor
-        UpdateCursor(lookData);
-
-        if (!ignoreInputsWhenLookAway || ignoreInputsWhenLookAway && currentLook != null)
-        {
-            // button down handling
-            _buttonUsed = false;
-            if (Input.GetButtonDown(submitButtonName))
-            {
-                ClearSelection();
-                lookData.pressPosition = lookData.position;
-                lookData.pointerPressRaycast = lookData.pointerCurrentRaycast;
-                lookData.pointerPress = null;
-                if (currentLook != null)
-                {
-                    currentPressed = currentLook;
-                    GameObject newPressed = null;
-                    if (mode == Mode.Pointer)
-                    {
-                        newPressed = ExecuteEvents.ExecuteHierarchy(currentPressed, lookData, ExecuteEvents.pointerDownHandler);
-                        if (newPressed == null)
-                        {
-                            // some UI elements might only have click handler and not pointer down handler
-                            newPressed = ExecuteEvents.ExecuteHierarchy(currentPressed, lookData, ExecuteEvents.pointerClickHandler);
-                            if (newPressed != null)
-                            {
-                                currentPressed = newPressed;
-                            }
-                        }
-                        else
-                        {
-                            currentPressed = newPressed;
-                            // we want to do click on button down at same time, unlike regular mouse processing
-                            // which does click when mouse goes up over same object it went down on
-                            // reason to do this is head tracking might be jittery and this makes it easier to click buttons
-                            ExecuteEvents.Execute(newPressed, lookData, ExecuteEvents.pointerClickHandler);
-                        }
-                    }
-                    else if (mode == Mode.Submit)
-                    {
-                        newPressed = ExecuteEvents.ExecuteHierarchy(currentPressed, lookData, ExecuteEvents.submitHandler);
-                        if (newPressed == null)
-                        {
-                            // try select handler instead
-                            newPressed = ExecuteEvents.ExecuteHierarchy(currentPressed, lookData, ExecuteEvents.selectHandler);
-                        }
-                    }
-                    if (newPressed != null)
-                    {
-                        lookData.pointerPress = newPressed;
-                        currentPressed = newPressed;
-                        Select(currentPressed);
-                        _buttonUsed = true;
-                    }
-                    if (mode == Mode.Pointer)
-                    {
-                        if (useLookDrag)
-                        {
-                            bool useLookTest = true;
-                            if (!useLookDragSlider && currentPressed.GetComponent<Slider>())
-                            {
-                                useLookTest = false;
-                            }
-                            else if (!useLookDragScrollbar && currentPressed.GetComponent<Scrollbar>())
-                            {
-                                useLookTest = false;
-                                // the following is for scrollbars to work right
-                                // apparently they go into an odd drag mode when pointerDownHandler is called
-                                // a begin/end drag fixes that
-                                if (ExecuteEvents.Execute(currentPressed, lookData, ExecuteEvents.beginDragHandler))
-                                {
-                                    ExecuteEvents.Execute(currentPressed, lookData, ExecuteEvents.endDragHandler);
-                                }
-                            }
-                            if (useLookTest)
-                            {
-                                if (ExecuteEvents.Execute(currentPressed, lookData, ExecuteEvents.beginDragHandler))
-                                {
-                                    lookData.pointerDrag = currentPressed;
-                                    currentDragging = currentPressed;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            // the following is for scrollbars to work right
-                            // apparently they go into an odd drag mode when pointerDownHandler is called
-                            // a begin/end drag fixes that
-                            if (ExecuteEvents.Execute(currentPressed, lookData, ExecuteEvents.beginDragHandler))
-                            {
-                                ExecuteEvents.Execute(currentPressed, lookData, ExecuteEvents.endDragHandler);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // have to handle button up even if looking away
-        if (Input.GetButtonUp(submitButtonName))
-        {
-            if (currentDragging)
-            {
-                ExecuteEvents.Execute(currentDragging, lookData, ExecuteEvents.endDragHandler);
-                if (currentLook != null)
-                {
-                    ExecuteEvents.ExecuteHierarchy(currentLook, lookData, ExecuteEvents.dropHandler);
-                }
-                lookData.pointerDrag = null;
-                currentDragging = null;
-            }
-            if (currentPressed)
-            {
-                ExecuteEvents.Execute(currentPressed, lookData, ExecuteEvents.pointerUpHandler);
-                lookData.rawPointerPress = null;
-                lookData.pointerPress = null;
-                currentPressed = null;
-            }
-        }
-
-        // drag handling
-        if (currentDragging != null)
-        {
-            ExecuteEvents.Execute(currentDragging, lookData, ExecuteEvents.dragHandler);
-        }
-
-        if (!ignoreInputsWhenLookAway || ignoreInputsWhenLookAway && currentLook != null)
-        {
-            // control axis handling
-            _controlAxisUsed = false;
-            if (eventSystem.currentSelectedGameObject && controlAxisName != null && controlAxisName != "")
-            {
-                float newVal = Input.GetAxis(controlAxisName);
-                if (newVal > 0.01f || newVal < -0.01f)
-                {
-                    if (useSmoothAxis)
-                    {
-                        Slider sl = eventSystem.currentSelectedGameObject.GetComponent<Slider>();
-                        if (sl != null)
-                        {
-                            float mult = sl.maxValue - sl.minValue;
-                            sl.value += newVal * smoothAxisMultiplier * mult;
-                            _controlAxisUsed = true;
-                        }
-                        else
-                        {
-                            Scrollbar sb = eventSystem.currentSelectedGameObject.GetComponent<Scrollbar>();
-                            if (sb != null)
-                            {
-                                sb.value += newVal * smoothAxisMultiplier;
-                                _controlAxisUsed = true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        _controlAxisUsed = true;
-                        float time = Time.unscaledTime;
-                        if (time > nextAxisActionTime)
-                        {
-                            nextAxisActionTime = time + 1f / steppedAxisStepsPerSecond;
-                            AxisEventData axisData = GetAxisEventData(newVal, 0.0f, 0.0f);
-                            if (!ExecuteEvents.Execute(eventSystem.currentSelectedGameObject, axisData, ExecuteEvents.moveHandler))
-                            {
-                                _controlAxisUsed = false;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // Save the pending click state.
+        pointerData.rawPointerPress = go;
+        pointerData.eligibleForClick = true;
+        pointerData.clickCount = 1;
+        pointerData.clickTime = Time.unscaledTime;
     }
 }
