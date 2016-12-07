@@ -170,10 +170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  asteroid: {fileID: 0}
+  asteroid: {fileID: 1000013453148198}
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 0}
+  AsteroidCounter: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
+    type: 2}
+  MainCamera: {fileID: 0}
 --- !u!114 &114000012423202580
 MonoBehaviour:
   m_ObjectHideFlags: 1

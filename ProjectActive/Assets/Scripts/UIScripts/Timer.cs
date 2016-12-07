@@ -2,13 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
+
 public class Timer : MonoBehaviour {
     public Text AtmosphereTimer;
     public GameObject LoadingImage;
+   // public GameObject Blackhole;
     private float startTime;
     
     private bool goal = false;
-    private int numbergoal;
+    public Text AsteroidCounter;
 	// Use this for initialization
 	void Start () {
         startTime=Time.time;
@@ -24,26 +26,49 @@ public class Timer : MonoBehaviour {
         float t = Time.time - startTime; //gets time in level
 
         string min = ((int)t / 60).ToString();
-        string sec = (t % 60).ToString("f2");//f2 turns float decimals to 2
-
+        string sec = (t % 60).ToString("f2");//f2 turns float decimals to 2 decimals
+        
 
         AtmosphereTimer.text = min + ":" + sec;
+        //after 55sec timer stops TimeEnded(sec);
 
-    //    if (min.Equals("1"))
-      //      LoadScene(3);
+        GoalAcheived();
+
+
 	}
 
 
-    public void GoalAcheived()
+    void TimeEnded(string time)
+     {
+        /**goals depending on level
+
+            if (time.Equals("55") && Application.loadedLevel==1)
+        {    goal = true;
+             AtmosphereTimer.color = Color.red;
+        }**/
+
+        }
+     void GoalAcheived()
     {
-        if (numbergoal == 1) {  goal = true;  AtmosphereTimer.color = Color.green;}
-      
-       
+        /**goals depending on level**/
 
-    }
+        if (AsteroidCounter.text.Equals("5") && Application.loadedLevel == 1)
+        {   goal = true;//stop timer
+            AtmosphereTimer.color = Color.green;
+            AsteroidCounter.color = Color.green;
+           // Application.Quit();
+
+      //     LoadScene(2);
+          //  Instantiate(Blackhole, asteroid.transform.position, asteroid.transform.rotation);  black hole to next scene
+
+        }
+
+        }
 
 
-    void LoadScene(int level)
+
+
+void LoadScene(int level)
     {
 
         LoadingImage.SetActive(true);
