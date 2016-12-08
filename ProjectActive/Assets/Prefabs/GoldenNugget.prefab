@@ -22,8 +22,6 @@ GameObject:
   - 33: {fileID: 33000013079524288}
   - 23: {fileID: 23000012281099424}
   - 114: {fileID: 114000010863610682}
-  - 114: {fileID: 114000011452918380}
-  - 114: {fileID: 114000013290209520}
   m_Layer: 0
   m_Name: GoldenNugget
   m_TagString: SpecialAsteroid
@@ -114,7 +112,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 114000013290209520}
+        - m_Target: {fileID: 0}
           m_MethodName: GazeOn
           m_Mode: 1
           m_Arguments:
@@ -143,7 +141,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 114000013290209520}
+        - m_Target: {fileID: 0}
           m_MethodName: Gazeoff
           m_Mode: 1
           m_Arguments:
@@ -157,31 +155,3 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114000011452918380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011633851956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65a614b23686de41842b7e93fbf3249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 90
---- !u!114 &114000013290209520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011633851956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d53c12dca7f164da659f43ce7acad2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  asteroid: {fileID: 1000011633851956}
-  lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 0}

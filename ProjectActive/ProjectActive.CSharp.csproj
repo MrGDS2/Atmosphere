@@ -143,6 +143,7 @@
     <Compile Include="Assets\Scripts\ActionScripts\PlayerLookingAt.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\randomAsteroids.cs" />
     <Compile Include="Assets\Scripts\ButtonHover.cs" />
+    <Compile Include="Assets\Scripts\GoldenNugDestroyed.cs" />
     <Compile Include="Assets\Scripts\RaycastLine.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ButtonHover.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeCrosshairOnOff.cs" />

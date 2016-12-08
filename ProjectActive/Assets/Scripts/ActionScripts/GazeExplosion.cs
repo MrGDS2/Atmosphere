@@ -48,8 +48,8 @@ public class GazeExplosion : MonoBehaviour
             lookingTime--;
             print("GAZE TIME ==>" + lookingTime);
           
-                if (lookingTime <= 0)
-                {
+           //     if (lookingTime <= 0)
+              //  {
                     //Explosion  after gaze time of x number of secs
                     //Bang sound effect won't work?
                     Bang = GetComponent<AudioSource>();
@@ -76,11 +76,8 @@ public class GazeExplosion : MonoBehaviour
                 }
             
            
-            }
-           else
-        {
-            //distance = Camera.main.farClipPlane * 0.95f;//check this 
-        }
+          //  }
+       
 
         }
 

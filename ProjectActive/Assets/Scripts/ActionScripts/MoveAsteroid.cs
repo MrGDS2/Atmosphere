@@ -5,11 +5,12 @@ using System.Collections;
  * 
  *      **/
 public class MoveAsteroid : MonoBehaviour {
+    public static MoveAsteroid instance;
 	public float speed=5f;
     // Use this for initialization
     void Start()
     {
-
+        instance = this;
     }
 	
 	// Update is called once per frame
