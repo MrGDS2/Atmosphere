@@ -2,19 +2,19 @@
 using System.Collections;
 //Saima Khot
 public class randomAsteroids : MonoBehaviour {
-
+    public static randomAsteroids instance;
     public GameObject[] asteroids;
     public Vector3 spawnValues;
     public int startWait;
     public float spawnWait;
     public float spawnMaxWait;
     public float spawnMinWait;
-   
     public bool stop;
 
     int randAsteroid;
 	void Start ()
     {
+        instance = this;
         StartCoroutine(waitForNextAsteroid());
 	}
 	

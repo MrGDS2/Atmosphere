@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
     public Text AtmosphereTimer;
     public GameObject LoadingImage;
+    public GameObject FinishMenu;
    // public GameObject Blackhole;
     private float startTime;
-    
     private bool goal = false;
     public Text AsteroidCounter;
 	// Use this for initialization
 	void Start () {
         startTime=Time.time;
+       
 	}
 	
 	// Update is called once per frame
@@ -56,10 +57,12 @@ public class Timer : MonoBehaviour {
         {   goal = true;//stop timer
             AtmosphereTimer.color = Color.green;
             AsteroidCounter.color = Color.green;
-           // Application.Quit();
+            randomAsteroids.instance.stop = true;//stops random asteroids
+            FinishMenu.SetActive(true);//menu pop up
+            // Application.Quit();
 
-      //     LoadScene(2);
-          //  Instantiate(Blackhole, asteroid.transform.position, asteroid.transform.rotation);  black hole to next scene
+            //     LoadScene(2);
+            //  Instantiate(Blackhole, asteroid.transform.position, asteroid.transform.rotation);  black hole to next scene
 
         }
 

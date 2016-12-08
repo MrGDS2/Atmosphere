@@ -42,9 +42,10 @@ public class GoldenNugDestroyed : MonoBehaviour {
                 Destroy(Specialasteroid);
                 Debug.Log(Specialasteroid.name + "===> has been Blown up" + "Slowing Asteroids");
                 GoldPowerUp();
-               //cahnges the speed of all asteroids from 80 to 30
-             //   AsteroidCounter.text = Counter.ToString();  
-                                                           
+                //cahnges the speed of all asteroids from 80 to 30
+                Debug.Log("Current Asteroid Speed==>" +MoveAsteroid.instance.speed.ToString());
+                //   AsteroidCounter.text = Counter.ToString();  
+
 
 
 
@@ -61,7 +62,7 @@ public class GoldenNugDestroyed : MonoBehaviour {
 
         /***
          * Gold asteroid will SLOW Down the asteroids when user hits this asteroid***/
-        MoveAsteroid.instance.speed = 30f;
+        MoveAsteroid.instance.speed = 10f;
 
     }
 }
