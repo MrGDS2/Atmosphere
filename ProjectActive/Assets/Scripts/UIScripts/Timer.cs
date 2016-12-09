@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
     public Text AtmosphereTimer;
+    public Text AsteroidCounter;
     public GameObject LoadingImage;
     public GameObject FinishMenu;
    // public GameObject Blackhole;
     private float startTime;
     private bool goal = false;
-    public Text AsteroidCounter;
+  
 	// Use this for initialization
 	void Start () {
         startTime=Time.time;
@@ -52,21 +53,40 @@ public class Timer : MonoBehaviour {
      void GoalAcheived()
     {
         /**goals depending on level**/
-
-        if (AsteroidCounter.text.Equals("5") && Application.loadedLevel == 1)
+        Scene scene = SceneManager.GetActiveScene();
+        if (AsteroidCounter.text.Equals("5") &&  scene.name.Equals("AtmosphereEASY"))
         {   goal = true;//stop timer
             AtmosphereTimer.color = Color.green;
             AsteroidCounter.color = Color.green;
             randomAsteroids.instance.stop = true;//stops random asteroids
-            FinishMenu.SetActive(true);//menu pop up
-            // Application.Quit();
+            Debug.Log("Scene " + scene.name);
+
+        }
+   else if (AsteroidCounter.text.Equals("1") && scene.name.Equals("AtmosphereModerate"))
+        {
+            goal = true;//stop timer
+            AtmosphereTimer.color = Color.green;
+            AsteroidCounter.color = Color.green;
+            randomAsteroids.instance.stop = true;//stops random asteroids
+            Debug.Log("Scene " + scene.name);                                     //menu pop up
+                                                 // Application.Quit();
 
             //     LoadScene(2);
             //  Instantiate(Blackhole, asteroid.transform.position, asteroid.transform.rotation);  black hole to next scene
 
         }
+        if (AsteroidCounter.text.Equals("2") && scene.name.Equals("AtmosphereInsane"))
+        {
+            goal = true;//stop timer
+            AtmosphereTimer.color = Color.green;
+            AsteroidCounter.color = Color.green;
+            randomAsteroids.instance.stop = true;//stops random asteroids
+                                                 //menu pop up
+            Debug.Log("Scene " + scene.name);
 
         }
+
+    }
 
 
 

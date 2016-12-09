@@ -502,7 +502,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &228315941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,7 +931,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &694392885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,7 +1171,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &695758342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,19 +1371,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.9851707
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.8058323
+      value: -0.007549671
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.17109424
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.59214383
+      value: -0.010418332
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_RootOrder
@@ -1406,12 +1403,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 252.926
+      value: -160.59001
       objectReference: {fileID: 0}
     - target: {fileID: 2369268, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff9dc043a18eb344a8795d3e20ab108, type: 2}
+    - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.3100001
+      objectReference: {fileID: 0}
+    - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -179.371
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491094, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 2}
   m_IsPrefabParent: 0
@@ -1663,7 +1672,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &1034380880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,7 +2046,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &1108928960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2266,7 +2273,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 743407797
+  randomSeed: 796345467
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -4324,7 +4331,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 87c316b602156405d92e616621658222, type: 3}
     m_FontSize: 12
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
@@ -4464,7 +4471,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &1787745431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4705,7 +4711,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &1899354540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5017,6 +5022,26 @@ Prefab:
       propertyPath: m_Text
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f038d7b1aa87afc44842909446dfa7ab, type: 2}
   m_IsPrefabParent: 0
@@ -5144,7 +5169,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 1015651318}
-  MainCamera: {fileID: 110202652}
 --- !u!114 &1965071757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5335,13 +5359,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
-  - {fileID: 1000012366700606, guid: cdb5d8ecd3d6e8c47b4ad38426238c73, type: 2}
-  - {fileID: 1000011864927884, guid: 31e5b831a87e0bb4a918aadf22a88c97, type: 2}
-  - {fileID: 1000010480271942, guid: 4e7d6b2dd243aa947902f8bce675ded4, type: 2}
+  - {fileID: 1000011864927884, guid: f7ed1fef9120e0c4ba32e78c60528092, type: 2}
+  - {fileID: 1000011864927884, guid: f7ed1fef9120e0c4ba32e78c60528092, type: 2}
+  - {fileID: 1000011864927884, guid: f7ed1fef9120e0c4ba32e78c60528092, type: 2}
   spawnValues: {x: 10, y: 0, z: 2}
   startWait: 1
   spawnWait: 0
-  spawnMaxWait: 6
+  spawnMaxWait: 8
   spawnMinWait: 3
   stop: 0
 --- !u!4 &2024020224
@@ -5382,7 +5406,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c106bb3ac3d51d34caa499e82e8f0d80, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f7debce09ea12024d8eb3675bf1babe0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

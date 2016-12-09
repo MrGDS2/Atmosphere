@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class ButtonHover : MonoBehaviour {
     public int timeRemaining=2;
    // public GameObject Object;
@@ -55,11 +55,11 @@ void Counter()
     {
         GUI.Label(new Rect(10, 10, 100, 20), timeRemaining.ToString());//displays time to screen
     }
-    void LoadScene(int level)
+  public void LoadScene(int level)
     {
 
         LoadingImage.SetActive(true);
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
     }
 
 }

@@ -8,8 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Atmosphere Menu.unity
   - enabled: 1
-    path: Assets/Scenes/Atmosphere2.unity
+    path: Assets/Scenes/AtmosphereEASY.unity
   - enabled: 1
-    path: Assets/Scenes/Atmosphere.unity
+    path: Assets/Scenes/AtmosphereModerate.unity
   - enabled: 1
-    path: Assets/Scenes/Atmosphere3.unity
+    path: Assets/Scenes/AtmosphereInsane.unity

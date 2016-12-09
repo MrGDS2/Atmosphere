@@ -22,7 +22,7 @@ public class GazeExplosion : MonoBehaviour
     public Text AsteroidCounter;
     public static int Counter = 0;
     private AudioSource Bang;
-   public Camera MainCamera;
+
     /**Initialize BAng **/
     void Awake()
     {
@@ -30,7 +30,7 @@ public class GazeExplosion : MonoBehaviour
 
     }
     void Update()
-    { }
+    {  }
 
 
     /**Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -48,8 +48,8 @@ public class GazeExplosion : MonoBehaviour
             lookingTime--;
             print("GAZE TIME ==>" + lookingTime);
           
-           //     if (lookingTime <= 0)
-              //  {
+             // if (lookingTime == 0)
+               // {
                     //Explosion  after gaze time of x number of secs
                     //Bang sound effect won't work?
                     Bang = GetComponent<AudioSource>();
@@ -59,24 +59,8 @@ public class GazeExplosion : MonoBehaviour
                     Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
                     Destroy(asteroid);
                     Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-                AsteroidCounter.text = Counter.ToString();  //problem?
-               /** if (asteroid.tag.Equals("SpecialAsteroid"))
-                {
-                    Destroy(asteroid);
-                    Counter =  Counter += 2;
-                    Debug.Log(asteroid.name + "GoldenNugget" + Counter);
-                    UpdateAsteroidTracker(Counter.ToString());
-                } **/
-               
-                
-
-
-                     
-              
-                }
-            
-           
-          //  }
+                    AsteroidCounter.text = Counter.ToString();
+        }
        
 
         }
@@ -100,7 +84,7 @@ public class GazeExplosion : MonoBehaviour
     public void Gazeoff()
     {
         CancelInvoke();
-        lookingTime =0.5;
+      //  lookingTime =0.5;
 
     }
 
