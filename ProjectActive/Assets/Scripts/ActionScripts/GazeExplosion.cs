@@ -1,13 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// George samuels II 
 /// 
 /// 
-/// FIx ME:11/22/2016
+/// FIx ME:11/22/2016  * FIXED
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// FIXME: 12/11/16 Counter to text is broken =>prefab?
 /// </summary>
 
 
@@ -21,13 +28,13 @@ public class GazeExplosion : MonoBehaviour
     public AudioClip soundclip;
     public Text AsteroidCounter;
     public static int Counter = 0;
+    public static GazeExplosion instance;
     private AudioSource Bang;
 
     /**Initialize BAng **/
-    void Awake()
+    void Start()
     {
-
-
+        instance = this;
     }
     void Update()
     {  }
@@ -59,7 +66,30 @@ public class GazeExplosion : MonoBehaviour
                     Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
                     Destroy(asteroid);
                     Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-                    AsteroidCounter.text = Counter.ToString();
+                     Counting();
+
+
+            /**goals depending on level**/
+            Scene scene = SceneManager.GetActiveScene();
+          switch(scene.name)
+            {
+                case "AtmosphereEASY":
+                 AsteroidCounter.text = Counter.ToString()+"/5";
+                   PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
+
+                    break;
+                case "AtmosphereModerate":
+                    AsteroidCounter.text = Counter.ToString() + "/10";
+                    break;
+                case "AtmosphereInsane":
+                    AsteroidCounter.text = Counter.ToString() + "/15";
+                    break;
+              
+            }
+
+
+
+
         }
        
 
@@ -69,7 +99,13 @@ public class GazeExplosion : MonoBehaviour
 
 
  
-
+    public int Counting()
+    {
+        //temp to fix counting issue 12/11/16
+        //TODO:FIXME
+        Debug.Log("Counting LINE 95" + "===> " + Counter);
+        return Counter;
+    }
 
     /***Counts only on Gaze **/
     public void GazeOn()
@@ -87,6 +123,8 @@ public class GazeExplosion : MonoBehaviour
       //  lookingTime =0.5;
 
     }
+
+    
 
 
    /** void UpdateAsteroidTracker(string update)

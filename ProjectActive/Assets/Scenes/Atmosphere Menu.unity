@@ -1502,18 +1502,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 623718666}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: b26408ead2ac7cf438bfb4ed26fae998,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
@@ -1584,12 +1572,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 623718666}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 8300000, guid: b26408ead2ac7cf438bfb4ed26fae998,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3412,10 +3401,10 @@ Transform:
   m_PrefabParentObject: {fileID: 418764, guid: 4eed522d0e6d81e469ed180461ccd070, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1494034858}
-  m_LocalRotation: {x: -0, y: -0.70637965, z: -0, w: -0.70783323}
+  m_LocalRotation: {x: -0, y: -0.7388516, z: -0, w: -0.6738681}
   m_LocalPosition: {x: -725.00006, y: 7, z: -5.000061}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 89.886, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 95.118004, z: 0}
   m_Children:
   - {fileID: 1037179670}
   m_Father: {fileID: 0}

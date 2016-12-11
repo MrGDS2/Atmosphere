@@ -248,9 +248,7 @@ MonoBehaviour:
   asteroid: {fileID: 1000010480271942}
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
-  AsteroidCounter: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
-    type: 2}
-  MainCamera: {fileID: 0}
+  AsteroidCounter: {fileID: 0}
 --- !u!114 &114000013335238468
 MonoBehaviour:
   m_ObjectHideFlags: 1

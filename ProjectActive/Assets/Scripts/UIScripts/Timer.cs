@@ -2,33 +2,37 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//George samuels II
 public class Timer : MonoBehaviour {
     public Text AtmosphereTimer;
     public Text AsteroidCounter;
     public GameObject LoadingImage;
-    public GameObject FinishMenu;
-   // public GameObject Blackhole;
+    public ArrayList Scores;
+    // public GameObject Blackhole;
     private float startTime;
     private bool goal = false;
-  
-	// Use this for initialization
-	void Start () {
+    private string sec;
+    private string min;
+
+    // Use this for initialization
+    void Start () {
         startTime=Time.time;
-       
+        Scores = new ArrayList();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         if (goal)
-            return;
+             return;
+            
+        
         //stops timer when asteroid number reached
 
         float t = Time.time - startTime; //gets time in level
 
-        string min = ((int)t / 60).ToString();
-        string sec = (t % 60).ToString("f2");//f2 turns float decimals to 2 decimals
+       min= ((int)t / 60).ToString();
+       sec  = (t % 60).ToString("f2");//f2 turns float decimals to 2 decimals
         
 
         AtmosphereTimer.text = min + ":" + sec;
@@ -54,17 +58,23 @@ public class Timer : MonoBehaviour {
     {
         /**goals depending on level**/
         Scene scene = SceneManager.GetActiveScene();
-        if (AsteroidCounter.text.Equals("5") &&  scene.name.Equals("AtmosphereEASY"))
+        if (GazeExplosion.instance.Counting()==5 &&  scene.name.Equals("AtmosphereEASY"))
         {   goal = true;//stop timer
+            PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
+            Scores.Add(AtmosphereTimer.text);
+            Debug.Log("New High score===>" + Scores.ToString());
             AtmosphereTimer.color = Color.green;
             AsteroidCounter.color = Color.green;
             randomAsteroids.instance.stop = true;//stops random asteroids
             Debug.Log("Scene " + scene.name);
-
+            SceneManager.LoadScene(4);//loads "EndGame"
+            Debug.Log("Loading ======>*" + "Endgame");
+    
         }
-   else if (AsteroidCounter.text.Equals("1") && scene.name.Equals("AtmosphereModerate"))
+   else if (GazeExplosion.instance.Counting() == 10 && scene.name.Equals("AtmosphereModerate"))
         {
             goal = true;//stop timer
+       
             AtmosphereTimer.color = Color.green;
             AsteroidCounter.color = Color.green;
             randomAsteroids.instance.stop = true;//stops random asteroids
@@ -75,7 +85,7 @@ public class Timer : MonoBehaviour {
             //  Instantiate(Blackhole, asteroid.transform.position, asteroid.transform.rotation);  black hole to next scene
 
         }
-        if (AsteroidCounter.text.Equals("2") && scene.name.Equals("AtmosphereInsane"))
+      else  if (GazeExplosion.instance.Counting() == 15 && scene.name.Equals("AtmosphereInsane"))
         {
             goal = true;//stop timer
             AtmosphereTimer.color = Color.green;
@@ -94,7 +104,7 @@ public class Timer : MonoBehaviour {
 void LoadScene(int level)
     {
 
-        LoadingImage.SetActive(true);
-        Application.LoadLevel(level);
+        //   LoadingImage.SetActive(true);
+      
     }
 }

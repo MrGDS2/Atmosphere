@@ -22,10 +22,10 @@ GameObject:
   - 33: {fileID: 33000012089021462}
   - 23: {fileID: 23000012161923546}
   - 135: {fileID: 135000014178139560}
-  - 114: {fileID: 114000010344764244}
   - 82: {fileID: 82000014131596748}
   - 114: {fileID: 114000013808042788}
   - 114: {fileID: 114000011201916876}
+  - 114: {fileID: 114000012752615154}
   m_Layer: 0
   m_Name: slow1
   m_TagString: Untagged
@@ -156,7 +156,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114000010344764244
+--- !u!114 &114000011201916876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011864927884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65a614b23686de41842b7e93fbf3249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+--- !u!114 &114000012752615154
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -170,21 +182,9 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1000011864927884}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 114000010749691244, guid: f038d7b1aa87afc44842909446dfa7ab,
+  soundclip: {fileID: 0}
+  AsteroidCounter: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
     type: 2}
---- !u!114 &114000011201916876
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011864927884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65a614b23686de41842b7e93fbf3249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
 --- !u!114 &114000013808042788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,7 +219,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 114000010344764244}
+        - m_Target: {fileID: 114000012752615154}
           m_MethodName: GazeOn
           m_Mode: 1
           m_Arguments:
@@ -236,8 +236,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 23000010927440282, guid: cdb5d8ecd3d6e8c47b4ad38426238c73,
-            type: 2}
+        - m_Target: {fileID: 23000012161923546}
           m_MethodName: set_material
           m_Mode: 2
           m_Arguments:
@@ -249,8 +248,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 114000011986727850, guid: cdb5d8ecd3d6e8c47b4ad38426238c73,
-            type: 2}
+        - m_Target: {fileID: 114000012752615154}
           m_MethodName: Gazeoff
           m_Mode: 1
           m_Arguments:

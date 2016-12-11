@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+
+//George samuels II
 public class ButtonHover : MonoBehaviour {
     public int timeRemaining=2;
    // public GameObject Object;
@@ -58,7 +60,7 @@ void Counter()
   public void LoadScene(int level)
     {
 
-        LoadingImage.SetActive(true);
+      LoadingImage.SetActive(true);
         SceneManager.LoadScene(level);
     }
 
