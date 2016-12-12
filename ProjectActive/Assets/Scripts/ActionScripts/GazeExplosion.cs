@@ -75,7 +75,8 @@ public class GazeExplosion : MonoBehaviour
             {
                 case "AtmosphereEASY":
                  AsteroidCounter.text = Counter.ToString()+"/5";
-                   PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
+              //     PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
+                    Debug.Log("saved asteroids"+ "GazeExplosion=>LINE 79");
 
                     break;
                 case "AtmosphereModerate":
@@ -104,6 +105,12 @@ public class GazeExplosion : MonoBehaviour
         //temp to fix counting issue 12/11/16
         //TODO:FIXME
         Debug.Log("Counting LINE 95" + "===> " + Counter);
+       
+            //resets asteroid counter 
+            //to zero for new levels after playerpref deleted.
+        
+
+
         return Counter;
     }
 

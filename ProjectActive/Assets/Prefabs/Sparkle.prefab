@@ -24,8 +24,8 @@ GameObject:
   - 135: {fileID: 135000012467840990}
   - 114: {fileID: 114000013535143390}
   - 114: {fileID: 114000010637270550}
+  - 114: {fileID: 114000010232933836}
   - 82: {fileID: 82000014099676996}
-  - 114: {fileID: 114000013369231000}
   m_Layer: 0
   m_Name: Sparkle
   m_TagString: Untagged
@@ -187,6 +187,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000010232933836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012371132284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65a614b23686de41842b7e93fbf3249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 80
 --- !u!114 &114000010637270550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,19 +215,6 @@ MonoBehaviour:
   lookingTime: 0.5
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
-    type: 2}
---- !u!114 &114000013369231000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012371132284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff25c92e916e9a34c8394d3c68e44582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CountAsteroidDestroid: {fileID: 56457376, guid: f038d7b1aa87afc44842909446dfa7ab,
     type: 2}
 --- !u!114 &114000013535143390
 MonoBehaviour:

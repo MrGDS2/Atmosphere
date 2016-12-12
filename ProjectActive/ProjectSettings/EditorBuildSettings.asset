@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/AtmosphereInsane.unity
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
+  - enabled: 1
+    path: Assets/Scenes/EndGameModerate.unity
+  - enabled: 1
+    path: Assets/Scenes/EndGameHard.unity

@@ -8,16 +8,18 @@ public class ReloadLevel : MonoBehaviour
 
     public Text ShowFinalAsteroids;
     public Text ShowFinalTime;
+    public static ReloadLevel instance;
     // Use this for initialization
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShowFinalAsteroids.text = "Asteroids Destroid:\n" + PlayerPrefs.GetString("player1Asteroids");
+        ShowFinalAsteroids.text = "Record TIME!";//"Asteroids Destroid:\n" 
+            //+ PlayerPrefs.GetString("player1Asteroids");
 
         ShowFinalTime.text = "Time:\n" +PlayerPrefs.GetString("player1");
     }
@@ -25,11 +27,16 @@ public class ReloadLevel : MonoBehaviour
     public void resetKeys()
     {
         /** Deletes Player numbers with each restart or progression**/
-        PlayerPrefs.DeleteAll();
-
-
-      /**  PlayerPrefs.DeleteKey("player1");
+          /**  PlayerPrefs.DeleteKey("player1");
         PlayerPrefs.DeleteKey("player1Asteroids"); **/
+      
+                PlayerPrefs.DeleteAll();
+           Debug.LogWarning("reset all KEYS*****>");
+
+        
+        
+
+   
     }
 
 }

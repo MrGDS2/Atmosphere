@@ -59,8 +59,13 @@ void Counter()
     }
   public void LoadScene(int level)
     {
+        if (!PlayerPrefs.GetString("player1Asteroids").Equals(null))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("reset all KEY==>" + "Button Hover");
+        }
 
-      LoadingImage.SetActive(true);
+        LoadingImage.SetActive(true);
         SceneManager.LoadScene(level);
     }
 

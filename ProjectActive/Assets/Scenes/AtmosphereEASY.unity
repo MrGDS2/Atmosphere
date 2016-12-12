@@ -139,6 +139,7 @@ GameObject:
   - 114: {fileID: 110202651}
   - 223: {fileID: 110202650}
   - 114: {fileID: 110202656}
+  - 114: {fileID: 110202657}
   m_Layer: 0
   m_Name: OVRCameraRig
   m_TagString: Untagged
@@ -284,6 +285,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5164e76ebd208e48a2d4c82824f93fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &110202657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 110202648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05e7a939c5183448b9fcd1ce60eb8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &138119241
@@ -4579,7 +4591,6 @@ MonoBehaviour:
   AtmosphereTimer: {fileID: 1689390956}
   AsteroidCounter: {fileID: 1015651318}
   LoadingImage: {fileID: 1102121591}
-  FinishMenu: {fileID: 1000011843653832, guid: 5ba579feb611cb54f8dcbbba5a7f00a7, type: 2}
 --- !u!114 &1689390956
 MonoBehaviour:
   m_ObjectHideFlags: 0

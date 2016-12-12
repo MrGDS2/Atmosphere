@@ -5,6 +5,8 @@ public class ShowTextTimed : MonoBehaviour {
 
     /*
      * George Samuels II
+     * 
+     * 
      */
 
     private bool showText = false, someRandomCondition = true;
