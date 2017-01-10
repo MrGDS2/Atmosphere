@@ -142,11 +142,23 @@
     <Compile Include="Assets\Scripts\ActionScripts\Movestars.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\PlayerLookingAt.cs" />
     <Compile Include="Assets\Scripts\ActionScripts\randomAsteroids.cs" />
+    <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\ButtonHover.cs" />
+    <Compile Include="Assets\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\EndGame\ReloadLevel.cs" />
     <Compile Include="Assets\Scripts\GoldenNugDestroyed.cs" />
+    <Compile Include="Assets\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\RaycastLine.cs" />
+    <Compile Include="Assets\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ButtonHover.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\ChangeText.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeCrosshairOnOff.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeInputModule.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeInputModuleCrosshair.cs" />
@@ -165,7 +177,9 @@
     <Compile Include="Assets\VRTransform.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\GalaxyBox1\instructions.txt" />
+    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
@@ -273,6 +287,7 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\arton_position.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

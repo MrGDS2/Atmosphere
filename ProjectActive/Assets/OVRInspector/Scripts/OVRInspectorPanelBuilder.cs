@@ -72,7 +72,7 @@ public class OVRInspectorPanelBuilder
     /// <returns></returns>
     public Button AddButton(string name, ButtonPress callback, Button buttonPrefab)
     {
-        Button button = (Button)GameObject.Instantiate(buttonPrefab);
+        Button button = (Button)GameObject.Instantiate(buttonPrefab); // 1/6/2017 creates a button 
 
         // Parent to panel and make it first item so that it appears behind the mouse
         RectTransform rectTransform = button.gameObject.GetComponent<RectTransform>();
@@ -115,6 +115,7 @@ public class OVRInspectorPanelBuilder
     public void SetActive(bool active)
     {
         panel.SetActive(active);
+
     }
 
     /// <summary>

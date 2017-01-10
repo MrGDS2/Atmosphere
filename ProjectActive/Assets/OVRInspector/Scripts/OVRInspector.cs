@@ -18,7 +18,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 ************************************************************************************/
-
+//TODO: FIND DOquit()!!!!!!
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -62,6 +62,7 @@ public class OVRInspector : MonoBehaviour
     [Header("UI Materials")]
     [Tooltip("Material used for UI elements")]
     public Material uiMaterial;
+
     [Tooltip("Material used for Font elements")]
     public Material uiFontMaterial;
 
@@ -282,6 +283,15 @@ public class OVRInspector : MonoBehaviour
 #region StartUpFunctions 
     void Awake()
     {
+        //sets left and right panels to false 
+        /**leaving only middle panel
+         leftPanel.SetActive(false);
+         rightPanel.SetActive(false);
+     **/
+     //   Hide();//starts with a hidden menu
+    
+        
+
         Debug.Log(string.Format("OVRInspector Awake", 0));
 
         playerLayer = GetLayerOrReportError("Player");
@@ -341,7 +351,7 @@ public class OVRInspector : MonoBehaviour
         SetupAttachedContexts();
 
 
-        CentreMouse();
+        //CentreMouse(); centers the star on a panel 1/6/17
         Hide();
 
     }
@@ -464,9 +474,9 @@ public class OVRInspector : MonoBehaviour
     {
         menuActive = true;
         GetComponent<OVRPlatformMenu2>().showMenuEnabled = true;
-        leftPanel.SetActive(true);
-        rightPanel.SetActive(true);
-        centerPanel.SetActive(true);
+      leftPanel.SetActive(true);
+     //   rightPanel.SetActive(true);  // 1/6/2017 changed to drop L & R Panels
+      //  centerPanel.SetActive(true);
 
         // We don't want the mouse to control yaw while the mouse navigates the menu
         if (playerController)
@@ -798,22 +808,33 @@ public class OVRInspector : MonoBehaviour
     {
         leftPanel.EraseButtons();
         lastSelectedContextButton = null;
-        foreach (OVRInspectorContextDetails details in contextList)
-        {
-            if (!details.GoesLastOnMenu())
-                AddContextButton(details);
-        }
-        //Add a button to close the menu
+        /**    foreach (OVRInspectorContextDetails details in contextList)
+            {
+                if (!details.GoesLastOnMenu())
+                    AddContextButton(details);        //Takes out extra options on left screen 1/6/17 changed
+            }**/
+
+        //Add a button to close the menu   
+        //1/6/2017 change from left panel to center
+
+        /**delegate is used as a pointer 
+         *  A delegate is a reference to a method.**/
         recenterButton = leftPanel.AddButton("Recenter", delegate { Recenter(); }, buttonPrefab);
+       
+
         if (allowClose)
         {
-            leftPanel.AddButton("Close", delegate { Hide(); }, buttonPrefab);
+            leftPanel.AddButton("Close Menu", delegate { Hide(); }, buttonPrefab);
         }
-        foreach (OVRInspectorContextDetails details in contextList)
+
+        leftPanel.AddButton("End App", delegate { DoQuit(); }, buttonPrefab);
+
+
+    /**    foreach (OVRInspectorContextDetails details in contextList)
         {
-            if (details.GoesLastOnMenu())
+            if (details.GoesLastOnMenu())   //takes out quit Button 1/6/17 changed
                 AddContextButton(details);
-        }
+        }**/
     }
 
     /// <summary>
@@ -1049,7 +1070,7 @@ public class OVRInspector : MonoBehaviour
     public void CentreMouse()
     {
         mousePos = new Vector2(0, 0);
-        SetPointerPanel(centerPanel);
+        SetPointerPanel(leftPanel); //changed to left panel
     }
 
     /// <summary>
@@ -1169,6 +1190,8 @@ public class OVRInspector : MonoBehaviour
     /// <returns></returns>
     IEnumerator QuitApp()
     {
+
+
         Hide();
         fader.SetUIFade(1);
         yield return null;

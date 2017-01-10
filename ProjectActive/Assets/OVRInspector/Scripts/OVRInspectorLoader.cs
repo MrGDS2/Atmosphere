@@ -45,7 +45,8 @@ public class OVRInspectorLoader : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-       //changed 12/4/16 gameObject.SetActive(false);
+        //changed disables the menu 12/4/16
+      //  gameObject.SetActive(false);
 
         var inspectorLoaders = GameObject.FindObjectsOfType(typeof(OVRInspectorLoader));
         if (inspectorLoaders.Length > 1)
@@ -75,6 +76,7 @@ public class OVRInspectorLoader : MonoBehaviour
         }
         else if (summonMenuDelay == 0)
             OVRInspector.instance.Show();
+                // 1/5/2017  Hide's Panel but not the star;
     }
 
     IEnumerator DelayedMenuSummon()

@@ -44,7 +44,8 @@ public class OVRUserPanel : MonoBehaviour {
         {
             if (docFile != null && docFile.Length > 0)
             {
-                OVRInspector.instance.SetDocTextFromFile(docFile);
+                //OVRInspector.instance.SetDocTextFromFile(docFile);
+                //pulls right side of screen from a File
             }
         }
     }
