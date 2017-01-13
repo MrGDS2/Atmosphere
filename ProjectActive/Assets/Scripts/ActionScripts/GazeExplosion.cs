@@ -25,17 +25,26 @@ public class GazeExplosion : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject asteroid;
     public double lookingTime =0.5;
-    public AudioClip soundclip;
     public Text AsteroidCounter;
     public static int Counter = 0;
     public static GazeExplosion instance;
+    public AudioClip soundclip;
     private AudioSource Bang;
 
     /**Initialize BAng **/
     void Start()
     {
         instance = this;
+      
+ /**sound for asteroids explosion**/
+          gameObject.AddComponent<AudioSource>();//initialize Audio Source
+           
+          
     }
+ 
+  
+    
+
     void Update()
     {  }
 
@@ -54,19 +63,22 @@ public class GazeExplosion : MonoBehaviour
         {
             lookingTime--;
             print("GAZE TIME ==>" + lookingTime);
-          
-             // if (lookingTime == 0)
-               // {
-                    //Explosion  after gaze time of x number of secs
-                    //Bang sound effect won't work?
-                    Bang = GetComponent<AudioSource>();
-                    Bang.clip = soundclip;
-                    Bang.Play(); 
+
+            // if (lookingTime == 0)
+            // {
+
+
+
+            //Explosion  after gaze time of x number of secs
+       //     Bang.clip = soundclip;
+            //Bang sound effect 
+         //   Bang.Play();
 
                     Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
                     Destroy(asteroid);
                     Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
                      Counting();
+                 
 
 
             /**goals depending on level**/

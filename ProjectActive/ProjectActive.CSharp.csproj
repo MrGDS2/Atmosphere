@@ -159,6 +159,7 @@
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ButtonHover.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ChangeText.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\CloseMenu.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeCrosshairOnOff.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeInputModule.cs" />
     <Compile Include="Assets\Scripts\UIScripts\GazeInputModuleCrosshair.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Assets\Scripts\UIScripts\LookInputModule.cs" />
     <Compile Include="Assets\Scripts\UIScripts\Rectical.cs" />
     <Compile Include="Assets\Scripts\UIScripts\SceneresetKeys.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\ShiftCameraSpace.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ShowTextTimed.cs" />
     <Compile Include="Assets\Scripts\UIScripts\Timer.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />

@@ -212,8 +212,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 41979179}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &41979183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,8 +515,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 51647963}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &51647967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +633,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 51647963}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
+--- !u!224 &74333671 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1280425309}
 --- !u!1 &105377413
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,8 +760,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 105377413}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &105377417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +906,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 883012963}
   m_RootOrder: 4
+--- !u!1 &173130584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 173130585}
+  - 222: {fileID: 173130587}
+  - 114: {fileID: 173130586}
+  m_Layer: 0
+  m_Name: OutterShield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &173130585
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173130584}
+  m_LocalRotation: {x: 2.0395419e-10, y: 2.3283064e-10, z: -0.0053681303, w: 0.99998564}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9008067, y: 0.53219783, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.597}
+  m_Children: []
+  m_Father: {fileID: 74333671}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -39.5, y: 2.7}
+  m_SizeDelta: {x: 126.2, y: 105.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &173130586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173130584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1f1d5baae1d26404a8a639a07e5c7766, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &173130587
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173130584}
 --- !u!114 &203608280 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000013150684246, guid: 51640959bfa7056408220ebb6644210f,
@@ -1029,8 +1102,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 223362114}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &223362118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1269,8 +1342,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 287148384}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &287148388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,8 +1674,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 431958037}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &431958041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1841,8 +1914,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 439691905}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &439691909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2428,8 +2501,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 695696781}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &695696785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2776,8 +2849,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 776559358}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &776559362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2894,6 +2967,77 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776559358}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
+--- !u!1 &804055367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 804055368}
+  - 222: {fileID: 804055370}
+  - 114: {fileID: 804055369}
+  m_Layer: 0
+  m_Name: UIHub
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &804055368
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804055367}
+  m_LocalRotation: {x: -0.00018102567, y: -0.0025640433, z: 0.00029851444, w: -0.99999666}
+  m_LocalPosition: {x: 0, y: 0, z: 316.7251}
+  m_LocalScale: {x: 2.9999723, y: 3, z: 1.0000149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1287750953}
+  - {fileID: 1491458110}
+  - {fileID: 74333671}
+  m_Father: {fileID: 837182077}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -6.4626546, y: 162.44339}
+  m_SizeDelta: {x: 326.2, y: 80.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &804055369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804055367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 966be606197166640a108ef53355eddf, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &804055370
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804055367}
 --- !u!1 &837182076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,8 +3072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -1.6560001, y: -179.92401, z: -0.08400001}
   m_Children:
   - {fileID: 883012963}
-  - {fileID: 1858973240}
-  - {fileID: 1491458110}
+  - {fileID: 804055368}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5042,8 +5185,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 909003761}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &909003765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5282,8 +5425,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 957138858}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &957138862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5522,8 +5665,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 998891406}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &998891410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5786,6 +5929,74 @@ Transform:
   - {fileID: 509835227}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &1053707328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1053707329}
+  - 222: {fileID: 1053707331}
+  - 114: {fileID: 1053707330}
+  m_Layer: 0
+  m_Name: OutterShield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1053707329
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053707328}
+  m_LocalRotation: {x: 1.7985259e-10, y: -0, z: 0.008425841, w: 0.99996454}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5734065, y: 0.46588993, z: 1.0982841}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.93700004}
+  m_Children: []
+  m_Father: {fileID: 1158994765}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -23, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1053707330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053707328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1f1d5baae1d26404a8a639a07e5c7766, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1053707331
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053707328}
 --- !u!1 &1094416031
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,8 +7947,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1102064458}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1102064462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7854,6 +8065,97 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102064458}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
+--- !u!1 &1158994764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1158994765}
+  - 222: {fileID: 1158994768}
+  - 114: {fileID: 1158994767}
+  - 114: {fileID: 1158994766}
+  m_Layer: 0
+  m_Name: AtmosphereTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1158994765
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158994764}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 11.000028}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1053707329}
+  m_Father: {fileID: 74333671}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 171.99997, y: 1.0000153}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1158994766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158994764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b9d8ac699af1b4b897fe8764ff400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtmosphereTimer: {fileID: 1158994767}
+  AsteroidCounter: {fileID: 0}
+  LoadingImage: {fileID: 0}
+  soundclip: {fileID: 0}
+--- !u!114 &1158994767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158994764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\t\t\tTimer"
+--- !u!222 &1158994768
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158994764}
 --- !u!1 &1165597517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7976,8 +8278,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1165597517}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1165597521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8216,8 +8518,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1192923777}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1192923781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8456,8 +8758,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1224548948}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1224548952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8697,6 +8999,254 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!1001 &1280425309
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 804055368}
+    m_Modifications:
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -61.30001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 166
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8,
+        type: 3}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Goal:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011690044948, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012903198774, guid: f038d7b1aa87afc44842909446dfa7ab, type: 2}
+      propertyPath: m_Name
+      value: GOAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f038d7b1aa87afc44842909446dfa7ab, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1287750952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1287750953}
+  - 222: {fileID: 1287750955}
+  - 114: {fileID: 1287750954}
+  m_Layer: 0
+  m_Name: OutterBorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1287750953
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1287750952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00016444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 804055368}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0010635, y: 0.3}
+  m_SizeDelta: {x: 326.19, y: 91}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1287750954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1287750952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.42647058, g: 0.40536332, b: 0.23518598, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 966be606197166640a108ef53355eddf, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1287750955
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1287750952}
 --- !u!1 &1300170629
 GameObject:
   m_ObjectHideFlags: 0
@@ -8896,8 +9446,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1343576038}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1343576042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9136,8 +9686,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1363700743}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &1363700747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9376,8 +9926,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1407691931}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1407691935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9616,8 +10166,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1447344438}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1447344442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9739,7 +10289,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 837182077}
+    m_TransformParent: {fileID: 804055368}
     m_Modifications:
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
@@ -9754,42 +10304,42 @@ Prefab:
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 316
+      value: -1.2115862
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.00018102567
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.0025640433
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.00029851444
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.99999666
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -103
+      value: -32.173073
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 139
+      value: -7.8338013
       objectReference: {fileID: 0}
     - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
         type: 2}
@@ -9835,6 +10385,27 @@ Prefab:
       propertyPath: m_Name
       value: AsteroidCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.0000618
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013671112282, guid: 51640959bfa7056408220ebb6644210f,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.9999673
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013150684246, guid: 51640959bfa7056408220ebb6644210f,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: b74360b323746534b9e5ad8a174da200,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51640959bfa7056408220ebb6644210f, type: 2}
   m_IsPrefabParent: 0
@@ -9965,8 +10536,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1515054956}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1515054960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10205,8 +10776,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1560971536}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1560971540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10445,8 +11016,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1576462400}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &1576462404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10685,8 +11256,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1579409421}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1579409425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10925,8 +11496,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1665601095}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1665601099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11146,95 +11717,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
---- !u!1 &1858973239
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1858973240}
-  - 222: {fileID: 1858973243}
-  - 114: {fileID: 1858973242}
-  - 114: {fileID: 1858973241}
-  m_Layer: 0
-  m_Name: AtmosphereTimer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1858973240
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858973239}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 327}
-  m_LocalScale: {x: 3, y: 3, z: 0.99999976}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 837182077}
-  m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 269, y: 97}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1858973241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858973239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b9d8ac699af1b4b897fe8764ff400c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AtmosphereTimer: {fileID: 1858973242}
-  AsteroidCounter: {fileID: 0}
-  LoadingImage: {fileID: 0}
---- !u!114 &1858973242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858973239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 1f16052dfd5f6f54e94e97ecedd4c86b, type: 3}
-    m_FontSize: 12
-    m_FontStyle: 1
-    m_BestFit: 1
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\tTimer"
---- !u!222 &1858973243
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858973239}
 --- !u!1 &1887174052
 GameObject:
   m_ObjectHideFlags: 0
@@ -11357,8 +11839,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1887174052}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &1887174056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11597,8 +12079,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1926851889}
   lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
   AsteroidCounter: {fileID: 203608280}
+  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
 --- !u!114 &1926851893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12095,8 +12577,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 2129737888}
   lookingTime: 0.5
+  AsteroidCounter: {fileID: 0}
   soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 203608280}
 --- !u!114 &2129737892
 MonoBehaviour:
   m_ObjectHideFlags: 0

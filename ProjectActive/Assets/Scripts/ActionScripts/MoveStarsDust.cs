@@ -14,7 +14,7 @@ public class MoveStarsDust : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-speed * Time.deltaTime, 0,0); //moves object towards user
+        transform.Translate(0,speed * Time.deltaTime ,0); //moves object towards user
 
     }
 }

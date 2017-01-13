@@ -8,6 +8,9 @@ public class Timer : MonoBehaviour {
     public Text AsteroidCounter;
     public GameObject LoadingImage;
     public ArrayList Scores;
+    public AudioClip soundclip;
+    private AudioSource success;
+
     // public GameObject Blackhole;
     private float startTime;
     private bool goal = false;
@@ -18,6 +21,7 @@ public class Timer : MonoBehaviour {
     void Start () {
         startTime=Time.time;
         Scores = new ArrayList();
+        gameObject.AddComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -71,8 +75,7 @@ public class Timer : MonoBehaviour {
             SceneManager.LoadScene(4);//loads "EndGame"
 
             Debug.Log("Loading ======>*" + "Endgame");
-
-           
+          //  SuccessPing();
         }
    else if (GazeExplosion.instance.Counting() == 10 && scene.name.Equals("AtmosphereModerate"))
         {
@@ -105,10 +108,11 @@ public class Timer : MonoBehaviour {
 
 
 
-void LoadScene(int level)
+void SuccessPing()
     {
-
-        //   LoadingImage.SetActive(true);
+       success.clip = soundclip;
+        success.Play();
+        
       
     }
 }

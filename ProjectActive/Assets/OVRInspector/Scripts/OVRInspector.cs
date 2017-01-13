@@ -37,6 +37,8 @@ using System.Runtime.InteropServices; // required for DllImpor
 
 public class OVRInspector : MonoBehaviour
 {
+
+    public GameObject AlertClose;
     // Singleton instance
     public static OVRInspector instance { get; private set; }
 
@@ -283,13 +285,14 @@ public class OVRInspector : MonoBehaviour
 #region StartUpFunctions 
     void Awake()
     {
+        LockCursor();
         //sets left and right panels to false 
         /**leaving only middle panel
          leftPanel.SetActive(false);
          rightPanel.SetActive(false);
      **/
      //   Hide();//starts with a hidden menu
-    
+    // 1/6/17
         
 
         Debug.Log(string.Format("OVRInspector Awake", 0));
@@ -305,7 +308,7 @@ public class OVRInspector : MonoBehaviour
         instance = this;
 
 
-        UpdateUIMaterials();
+    //    UpdateUIMaterials();
 
         //Find prefabs
         buttonPrefab = (Button)Resources.Load("Prefabs/Button", typeof(Button));
@@ -319,7 +322,7 @@ public class OVRInspector : MonoBehaviour
 
         leftPanel = new OVRInspectorPanelBuilder(canvas.transform.FindChild("LeftPanel").gameObject);
         rightPanel = new OVRInspectorPanelBuilder(canvas.transform.FindChild("RightPanel").gameObject);
-        centerPanel = new OVRInspectorPanelBuilder(canvas.transform.FindChild("CenterPanel").gameObject);
+       centerPanel = new OVRInspectorPanelBuilder(canvas.transform.FindChild("CenterPanel").gameObject);
 
         docsPanel = rightPanel.panel.transform.FindChild("DocsPanel").gameObject;
         controlsPanel = centerPanel;
@@ -336,11 +339,10 @@ public class OVRInspector : MonoBehaviour
         //discomfortWarning = null;
 
         // Setup mouse pointer
-        pointer = canvas.GetComponent<OVRMousePointer>();
+       pointer = canvas.GetComponent<OVRMousePointer>();
         currentPointerPanel = leftPanel;
-       LockCursor();
-
-
+       
+      
         // Pre-level stuff
         OnAwakeOrLevelLoad();
 
@@ -475,9 +477,10 @@ public class OVRInspector : MonoBehaviour
         menuActive = true;
         GetComponent<OVRPlatformMenu2>().showMenuEnabled = true;
       leftPanel.SetActive(true);
-     //   rightPanel.SetActive(true);  // 1/6/2017 changed to drop L & R Panels
-      //  centerPanel.SetActive(true);
-
+         rightPanel.SetActive(false); 
+        //changed to drop L & R Panels
+        centerPanel.SetActive(false);
+ // 1/6/2017
         // We don't want the mouse to control yaw while the mouse navigates the menu
         if (playerController)
         {
@@ -827,7 +830,7 @@ public class OVRInspector : MonoBehaviour
             leftPanel.AddButton("Close Menu", delegate { Hide(); }, buttonPrefab);
         }
 
-        leftPanel.AddButton("End App", delegate { DoQuit(); }, buttonPrefab);
+        leftPanel.AddButton("End App", delegate { AskClose(); }, buttonPrefab);
 
 
     /**    foreach (OVRInspectorContextDetails details in contextList)
@@ -840,6 +843,15 @@ public class OVRInspector : MonoBehaviour
     /// <summary>
     /// Remove any menu contexts which belong to scene-specific contexts from a previous scene
     /// </summary>
+    
+        void AskClose()
+    {
+
+        centerPanel.SetActive(true);
+        centerPanel.AddButton("Yes", delegate { DoQuit(); }, buttonPrefab);
+        centerPanel.AddButton("No", delegate { Hide(); }, buttonPrefab);
+
+    }
     void CleanUpTopMenu()
     {
         // remove buttons with no context object
