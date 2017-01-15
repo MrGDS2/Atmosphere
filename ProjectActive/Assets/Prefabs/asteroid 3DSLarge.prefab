@@ -23,9 +23,8 @@ GameObject:
   - 23: {fileID: 23000010927440282}
   - 135: {fileID: 135000011382535182}
   - 114: {fileID: 114000011405060596}
-  - 114: {fileID: 114000011986727850}
-  - 82: {fileID: 82000011013195780}
   - 114: {fileID: 114000012494301726}
+  - 114: {fileID: 114000010294227902}
   m_Layer: 0
   m_Name: asteroid 3DSLarge
   m_TagString: Untagged
@@ -82,80 +81,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012366700606}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
---- !u!82 &82000011013195780
-AudioSource:
+--- !u!114 &114000010294227902
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012366700606}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d53c12dca7f164da659f43ce7acad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  asteroid: {fileID: 1000012366700606}
+  lookingTime: 0.5
+  AsteroidCounter: {fileID: 114000013150684246, guid: 51640959bfa7056408220ebb6644210f,
+    type: 2}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &114000011405060596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +136,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 114000011986727850}
+        - m_Target: {fileID: 0}
           m_MethodName: GazeOn
           m_Mode: 1
           m_Arguments:
@@ -219,7 +165,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 114000011986727850}
+        - m_Target: {fileID: 0}
           m_MethodName: Gazeoff
           m_Mode: 1
           m_Arguments:
@@ -233,23 +179,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114000011986727850
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012366700606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d53c12dca7f164da659f43ce7acad2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  asteroid: {fileID: 1000012366700606}
-  lookingTime: 0.5
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  AsteroidCounter: {fileID: 114000013150684246, guid: 51640959bfa7056408220ebb6644210f,
-    type: 2}
 --- !u!114 &114000012494301726
 MonoBehaviour:
   m_ObjectHideFlags: 1

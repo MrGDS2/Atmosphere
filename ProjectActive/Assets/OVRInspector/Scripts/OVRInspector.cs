@@ -827,10 +827,10 @@ public class OVRInspector : MonoBehaviour
 
         if (allowClose)
         {
-            leftPanel.AddButton("Close Menu", delegate { Hide(); }, buttonPrefab);
+            leftPanel.AddButton("Start", delegate { Hide(); }, buttonPrefab);
         }
 
-        leftPanel.AddButton("End App", delegate { AskClose(); }, buttonPrefab);
+        leftPanel.AddButton("Quit", delegate { AskClose(); }, buttonPrefab);
 
 
     /**    foreach (OVRInspectorContextDetails details in contextList)

@@ -22,7 +22,6 @@ GameObject:
   - 33: {fileID: 33000012089021462}
   - 23: {fileID: 23000012161923546}
   - 135: {fileID: 135000014178139560}
-  - 82: {fileID: 82000014131596748}
   - 114: {fileID: 114000013808042788}
   - 114: {fileID: 114000011201916876}
   - 114: {fileID: 114000012752615154}
@@ -82,80 +81,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011864927884}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
---- !u!82 &82000014131596748
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011864927884}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &114000011201916876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,9 +107,13 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   asteroid: {fileID: 1000011864927884}
   lookingTime: 0.5
-  soundclip: {fileID: 0}
   AsteroidCounter: {fileID: 114000011140677820, guid: f038d7b1aa87afc44842909446dfa7ab,
     type: 2}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
 --- !u!114 &114000013808042788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,7 +140,7 @@ MonoBehaviour:
           m_MethodName: set_material
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: b9ff41e40ef08194494509ffbe8a4d8b,
+            m_ObjectArgument: {fileID: 2100000, guid: 84b9e1d19d11078d11005b9844295342,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0

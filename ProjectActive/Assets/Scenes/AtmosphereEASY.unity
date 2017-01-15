@@ -123,7 +123,7 @@ Transform:
   - {fileID: 138119242}
   - {fileID: 2038865446}
   m_Father: {fileID: 110202649}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &110202648
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +158,8 @@ RectTransform:
   m_LocalScale: {x: 0.4068835, y: 0.46722472, z: 0.6308349}
   m_LocalEulerAnglesHint: {x: -1.6350001, y: -179.639, z: -0.125}
   m_Children:
-  - {fileID: 39439243}
   - {fileID: 1579206137}
+  - {fileID: 39439243}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -470,7 +470,6 @@ GameObject:
   - 135: {fileID: 228315942}
   - 114: {fileID: 228315941}
   - 114: {fileID: 228315940}
-  - 82: {fileID: 228315939}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (4)
   m_TagString: Untagged
@@ -491,80 +490,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427296782}
   m_RootOrder: 1
---- !u!82 &228315939
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 228315937}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &228315940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +505,11 @@ MonoBehaviour:
   asteroid: {fileID: 228315937}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
 --- !u!114 &228315941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,6 +626,80 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228315937}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
+--- !u!1 &332196490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 332196491}
+  - 222: {fileID: 332196493}
+  - 114: {fileID: 332196492}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &332196491
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332196490}
+  m_LocalRotation: {x: -0.6948872, y: -0.70927197, z: 0.05514543, w: -0.104995534}
+  m_LocalPosition: {x: 0, y: 0, z: -76.00396}
+  m_LocalScale: {x: 1.039161, y: 1.0096159, z: 1.0463763}
+  m_LocalEulerAnglesHint: {x: 12.897, y: -184.13199, z: 88.392006}
+  m_Children: []
+  m_Father: {fileID: 1781077516}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -14.999798, y: 338.00128}
+  m_SizeDelta: {x: 780.8, y: 56}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &332196492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332196490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b74360b323746534b9e5ad8a174da200, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Level 1
+--- !u!222 &332196493
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332196490}
 --- !u!1 &364321816
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +787,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 427296781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81, y: -239, z: -1266}
+  m_LocalPosition: {x: 81, y: -239, z: -676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1103,8 +1106,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -27.4, y: 0.2}
+  m_SizeDelta: {x: 106.3, y: 98.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683384865
 MonoBehaviour:
@@ -1151,10 +1154,9 @@ GameObject:
   - 23: {fileID: 694392887}
   - 135: {fileID: 694392886}
   - 114: {fileID: 694392885}
-  - 114: {fileID: 694392884}
-  - 82: {fileID: 694392883}
+  - 114: {fileID: 694392883}
   m_Layer: 0
-  m_Name: asteroid 3DSLarge (8)
+  m_Name: easy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1173,81 +1175,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 891926772}
   m_RootOrder: 2
---- !u!82 &694392883
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694392881}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &694392884
+--- !u!114 &694392883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1262,7 +1190,11 @@ MonoBehaviour:
   asteroid: {fileID: 694392881}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &694392885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,7 +1229,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 694392884}
+        - m_Target: {fileID: 0}
           m_MethodName: GazeOn
           m_Mode: 1
           m_Arguments:
@@ -1391,10 +1323,9 @@ GameObject:
   - 23: {fileID: 695758344}
   - 135: {fileID: 695758343}
   - 114: {fileID: 695758342}
-  - 114: {fileID: 695758341}
-  - 82: {fileID: 695758340}
+  - 114: {fileID: 695758340}
   m_Layer: 0
-  m_Name: asteroid 3DSLarge (6)
+  m_Name: easy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1413,81 +1344,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 891926772}
   m_RootOrder: 1
---- !u!82 &695758340
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695758338}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &695758341
+--- !u!114 &695758340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1502,7 +1359,11 @@ MonoBehaviour:
   asteroid: {fileID: 695758338}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &695758342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1398,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 695758341}
+        - m_Target: {fileID: 0}
           m_MethodName: GazeOn
           m_Mode: 1
           m_Arguments:
@@ -1770,7 +1631,6 @@ GameObject:
   - 135: {fileID: 752646798}
   - 114: {fileID: 752646797}
   - 114: {fileID: 752646796}
-  - 82: {fileID: 752646795}
   - 114: {fileID: 752646794}
   m_Layer: 0
   m_Name: Sparkle
@@ -1806,81 +1666,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &752646795
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 82000014099676996, guid: 20e54041fbf617244b7ed057a65bfe49,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752646792}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &752646796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,7 +1682,7 @@ MonoBehaviour:
   asteroid: {fileID: 752646792}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds: []
 --- !u!114 &752646797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,6 +1812,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 752646792}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
+--- !u!1 &763436229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 763436230}
+  - 222: {fileID: 763436232}
+  - 114: {fileID: 763436231}
+  m_Layer: 0
+  m_Name: Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &763436230
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763436229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1781077516}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 46, y: 280}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &763436231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763436229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &763436232
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763436229}
 --- !u!1 &880967910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4063,9 +3916,8 @@ GameObject:
   - 135: {fileID: 1034380881}
   - 114: {fileID: 1034380880}
   - 114: {fileID: 1034380879}
-  - 82: {fileID: 1034380878}
   m_Layer: 0
-  m_Name: asteroid 3DSLarge (9)
+  m_Name: frontasteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4084,80 +3936,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427296782}
   m_RootOrder: 4
---- !u!82 &1034380878
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1034380876}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1034380879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4173,7 +3951,11 @@ MonoBehaviour:
   asteroid: {fileID: 1034380876}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &1034380880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4290,6 +4072,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1034380876}
   m_Mesh: {fileID: 4300000, guid: 7ae079096ec87ca4fbacc021521f57c5, type: 3}
+--- !u!1 &1078387790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1078387791}
+  - 222: {fileID: 1078387793}
+  - 114: {fileID: 1078387792}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1078387791
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078387790}
+  m_LocalRotation: {x: 0.0000000037252899, y: -0, z: 0.000000029802319, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.0001643}
+  m_LocalScale: {x: 1.0008827, y: 1.0070847, z: 1.007969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1781077516}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 30.4, y: 171}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1078387792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078387790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1f1d5baae1d26404a8a639a07e5c7766, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1078387793
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078387790}
 --- !u!1 &1092271538
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,7 +4287,6 @@ GameObject:
   - 135: {fileID: 1108928961}
   - 114: {fileID: 1108928960}
   - 114: {fileID: 1108928959}
-  - 82: {fileID: 1108928958}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (8)
   m_TagString: Untagged
@@ -4458,80 +4307,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427296782}
   m_RootOrder: 3
---- !u!82 &1108928958
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1108928956}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1108928959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4547,7 +4322,11 @@ MonoBehaviour:
   asteroid: {fileID: 1108928956}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
 --- !u!114 &1108928960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6812,7 +6591,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579206136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 316.00003}
+  m_LocalPosition: {x: 0, y: 0, z: 817}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -6820,10 +6599,10 @@ RectTransform:
   - {fileID: 1015651320}
   - {fileID: 479738861}
   m_Father: {fileID: 110202649}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.0999641, y: 162.59998}
+  m_AnchoredPosition: {x: -1, y: 468}
   m_SizeDelta: {x: 326.2, y: 80.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579206138
@@ -6932,24 +6711,95 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 0
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
-    m_RichText: 0
+    m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\t\tTimer"
+  m_Text: Timer
 --- !u!222 &1689390957
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1689390953}
+--- !u!1 &1781077515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1781077516}
+  - 222: {fileID: 1781077518}
+  - 114: {fileID: 1781077517}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1781077516
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781077515}
+  m_LocalRotation: {x: -0.04523354, y: -0.039144192, z: 0.69852084, w: 0.7130851}
+  m_LocalPosition: {x: 0, y: 0, z: 40.806335}
+  m_LocalScale: {x: 2.2036853, y: 0.5643476, z: 0.7042877}
+  m_LocalEulerAnglesHint: {x: -2.196, y: 172.98901, z: 88.962006}
+  m_Children:
+  - {fileID: 763436230}
+  - {fileID: 1078387791}
+  - {fileID: 332196491}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_AnchorMin: {x: 0.5, y: 0.45662016}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 122.020134, y: 35.88041}
+  m_SizeDelta: {x: 18.8, y: 173.38773}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1781077517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781077515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1f1d5baae1d26404a8a639a07e5c7766, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1781077518
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781077515}
 --- !u!1 &1785546738
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,7 +6928,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 786118844
+  randomSeed: -178521346
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -8795,9 +8645,8 @@ GameObject:
   - 135: {fileID: 1787745432}
   - 114: {fileID: 1787745431}
   - 114: {fileID: 1787745430}
-  - 82: {fileID: 1787745429}
   m_Layer: 0
-  m_Name: asteroid 3DSLarge (4)
+  m_Name: easy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8816,80 +8665,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 891926772}
   m_RootOrder: 0
---- !u!82 &1787745429
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1787745427}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1787745430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,7 +8680,11 @@ MonoBehaviour:
   asteroid: {fileID: 1787745427}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &1787745431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9034,10 +8813,9 @@ GameObject:
   - 23: {fileID: 1899354542}
   - 135: {fileID: 1899354541}
   - 114: {fileID: 1899354540}
-  - 114: {fileID: 1899354539}
-  - 82: {fileID: 1899354538}
+  - 114: {fileID: 1899354538}
   m_Layer: 0
-  m_Name: asteroid 3DSLarge (9)
+  m_Name: easy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9056,81 +8834,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 891926772}
   m_RootOrder: 3
---- !u!82 &1899354538
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899354536}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &1899354539
+--- !u!114 &1899354538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -9145,7 +8849,11 @@ MonoBehaviour:
   asteroid: {fileID: 1899354536}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &1899354540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9180,7 +8888,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1899354539}
+        - m_Target: {fileID: 0}
           m_MethodName: GazeOn
           m_Mode: 1
           m_Arguments:
@@ -9524,7 +9232,6 @@ GameObject:
   - 135: {fileID: 1965071758}
   - 114: {fileID: 1965071757}
   - 114: {fileID: 1965071756}
-  - 82: {fileID: 1965071755}
   m_Layer: 0
   m_Name: asteroid 3DSLarge (6)
   m_TagString: Untagged
@@ -9545,80 +9252,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427296782}
   m_RootOrder: 2
---- !u!82 &1965071755
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1965071753}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1965071756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9634,7 +9267,11 @@ MonoBehaviour:
   asteroid: {fileID: 1965071753}
   lookingTime: 0.5
   AsteroidCounter: {fileID: 1015651318}
-  soundclip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  AsteroidSounds:
+  - {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+  - {fileID: 8300000, guid: d588b84bea03f294195edcae6e0fe38f, type: 3}
+  - {fileID: 8300000, guid: e93d5cbd4a12fe540a2b627c99c00b85, type: 3}
+  - {fileID: 8300000, guid: b738c6fdb793b404da734c38a7877034, type: 3}
 --- !u!114 &1965071757
 MonoBehaviour:
   m_ObjectHideFlags: 0
