@@ -21,7 +21,9 @@ public class ReloadLevel : MonoBehaviour
         ShowFinalAsteroids.text = "Record TIME!";//"Asteroids Destroid:\n" 
             //+ PlayerPrefs.GetString("player1Asteroids");
 
-        ShowFinalTime.text = "Time:\n" +PlayerPrefs.GetString("player1");
+   //     ShowFinalTime.text =PlayerPrefs.GetString("player1");
+
+        // "Time:\n" +
     }
 
     public void resetKeys()
@@ -30,7 +32,7 @@ public class ReloadLevel : MonoBehaviour
           /**  PlayerPrefs.DeleteKey("player1");
         PlayerPrefs.DeleteKey("player1Asteroids"); **/
       
-                PlayerPrefs.DeleteAll();
+               // PlayerPrefs.DeleteAll();
            Debug.LogWarning("reset all KEYS*****>");
 
         

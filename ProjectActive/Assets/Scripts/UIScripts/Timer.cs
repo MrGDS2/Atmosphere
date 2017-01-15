@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour {
     // Use this for initialization
     void Start () {
         startTime=Time.time;
-        Scores = new ArrayList();
+        Scores = new ArrayList();//puts scores in an array?
         gameObject.AddComponent<AudioSource>();
 	}
 	
@@ -63,9 +63,12 @@ public class Timer : MonoBehaviour {
         /**goals depending on level**/
         Scene scene = SceneManager.GetActiveScene();
         if (GazeExplosion.instance.Counting()==5 &&  scene.name.Equals("AtmosphereEASY"))
-        {   goal = true;//stop timer
-            PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
-            Debug.Log("saved time" + "Timer=>LINE 64");
+        {   
+
+            
+            goal = true;//stop timer
+        //    PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
+         //   Debug.Log("saved time" + "Timer=>LINE 64");
             Scores.Add(AtmosphereTimer.text);
             Debug.Log("New High score===>" + Scores.ToString());
             AtmosphereTimer.color = Color.green;
@@ -73,14 +76,15 @@ public class Timer : MonoBehaviour {
             randomAsteroids.instance.stop = true;//stops random asteroids
             Debug.Log("Scene " + scene.name);
             SceneManager.LoadScene(4);//loads "EndGame"
+            Debug.Break();
+            Debug.Log("playerpref "  + PlayerPrefs.HasKey("player1"));
 
-            Debug.Log("Loading ======>*" + "Endgame");
           //  SuccessPing();
         }
    else if (GazeExplosion.instance.Counting() == 10 && scene.name.Equals("AtmosphereModerate"))
         {
             goal = true;//stop timer
-            PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
+         //   PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
             AtmosphereTimer.color = Color.green;
       //      AsteroidCounter.color = Color.green;
             randomAsteroids.instance.stop = true;//stops random asteroids
@@ -94,7 +98,7 @@ public class Timer : MonoBehaviour {
       else  if (GazeExplosion.instance.Counting() == 15 && scene.name.Equals("AtmosphereInsane"))
         {
             goal = true;//stop timer
-            PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
+        //    PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
             AtmosphereTimer.color = Color.green;
         //    AsteroidCounter.color = Color.green;
             randomAsteroids.instance.stop = true;//stops random asteroids

@@ -9,14 +9,7 @@ public class SceneresetKeys : MonoBehaviour
     void Start()
     {
 
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Scene scene = SceneManager.GetActiveScene();
+ Scene scene = SceneManager.GetActiveScene();
         switch (scene.name)
         {
             case "AtmosphereEASY":
@@ -33,6 +26,13 @@ public class SceneresetKeys : MonoBehaviour
                 break;
 
         }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
     }
 
 
