@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/AtmosphereEASY.unity
+- path: Assets/Scenes/Atmosphere Menu.unity
   isLoaded: 1
   isActive: 1

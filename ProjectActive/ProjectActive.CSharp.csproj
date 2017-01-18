@@ -170,6 +170,8 @@
     <Compile Include="Assets\Scripts\UIScripts\ShiftCameraSpace.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ShowTextTimed.cs" />
     <Compile Include="Assets\Scripts\UIScripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UICounting.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIHub.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
@@ -181,6 +183,7 @@
     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\GalaxyBox1\instructions.txt" />
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Notes\Future Ideas.txt" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />

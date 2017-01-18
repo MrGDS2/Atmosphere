@@ -25,7 +25,7 @@ public class GazeExplosion : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject asteroid;
     public double lookingTime = 0.5;
-    public Text AsteroidCounter;
+ //   public Text AsteroidCounter;
     public static int Counter = 0;
     public static GazeExplosion instance;
     public AudioClip[] AsteroidSounds;
@@ -56,7 +56,7 @@ public class GazeExplosion : MonoBehaviour
     RaycastHit hit;
          if (Physics.Raycast(ray, out hit, 2))
              Debug.DrawLine(ray.origin, hit.point);**/
-    void BOOM()
+    public void BOOM()
     {
         // UpdateAsteroidCount();
 
@@ -88,16 +88,18 @@ public class GazeExplosion : MonoBehaviour
             switch (scene.name)
             {
                 case "AtmosphereEASY":
-                    AsteroidCounter.text = Counter.ToString() + "/5";
+                   
+
+          //       AsteroidCounter.text = Counting().ToString() + "/5";
                     //     PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
                     Debug.Log("saved asteroids" + "GazeExplosion=>LINE 79");
 
                     break;
                 case "AtmosphereModerate":
-                    AsteroidCounter.text = Counter.ToString() + "/10";
+                //    AsteroidCounter.text = Counter.ToString() + "/10";
                     break;
                 case "AtmosphereInsane":
-                    AsteroidCounter.text = Counter.ToString() + "/15";
+                 //   AsteroidCounter.text = Counter.ToString() + "/15";
                     break;
             }
 
@@ -111,16 +113,22 @@ public class GazeExplosion : MonoBehaviour
   
 
     }
-    
-
-
+/**
+    void OnGUI()
+    {
+      
+        
+            GUI.Label(new Rect(0, 0, 200, 20), "Enemies Remaining : " + Counter.ToString());
+        
+    }
+        **/
     void PlayClip()
     {
 
         /**Plays Random sound on explosion**/
         int clip;
 
-        clip = Random.Range(0, 2);
+        clip = Random.Range(0, 9);
         audio.clip = AsteroidSounds[clip];
         audio.Play();
         Debug.Log(clip + "sound");

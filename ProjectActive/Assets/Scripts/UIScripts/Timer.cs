@@ -62,7 +62,7 @@ public class Timer : MonoBehaviour {
     {
         /**goals depending on level**/
         Scene scene = SceneManager.GetActiveScene();
-        if (GazeExplosion.instance.Counting()==5 &&  scene.name.Equals("AtmosphereEASY"))
+        if (GazeExplosion.instance.Counting()==10 &&  scene.name.Equals("AtmosphereEASY"))
         {   
 
             
@@ -76,12 +76,12 @@ public class Timer : MonoBehaviour {
             randomAsteroids.instance.stop = true;//stops random asteroids
             Debug.Log("Scene " + scene.name);
             SceneManager.LoadScene(4);//loads "EndGame"
-            Debug.Break();
+         //   Debug.Break();
             Debug.Log("playerpref "  + PlayerPrefs.HasKey("player1"));
 
           //  SuccessPing();
         }
-   else if (GazeExplosion.instance.Counting() == 10 && scene.name.Equals("AtmosphereModerate"))
+   else if (GazeExplosion.instance.Counting() == 20 && scene.name.Equals("AtmosphereModerate"))
         {
             goal = true;//stop timer
          //   PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
@@ -95,7 +95,7 @@ public class Timer : MonoBehaviour {
             //  Instantiate(Blackhole, asteroid.transform.position, asteroid.transform.rotation);  black hole to next scene
 
         }
-      else  if (GazeExplosion.instance.Counting() == 15 && scene.name.Equals("AtmosphereInsane"))
+      else  if (GazeExplosion.instance.Counting() == 30 && scene.name.Equals("AtmosphereInsane"))
         {
             goal = true;//stop timer
         //    PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time

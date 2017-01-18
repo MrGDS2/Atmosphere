@@ -6,19 +6,25 @@ public class ReloadLevel : MonoBehaviour
 {
     //FIXME resetKeys doesn't really work * 12/11/16
 
-    public Text ShowFinalAsteroids;
-    public Text ShowFinalTime;
+ //   public Text ShowFinalAsteroids;
+  //  public Text ShowFinalTime;
     public static ReloadLevel instance;
     // Use this for initialization
     void Start()
     {
         instance = this;
+
+        GazeExplosion.Counter = 0;//reset counter to zero for each level
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShowFinalAsteroids.text = "Record TIME!";//"Asteroids Destroid:\n" 
+
+        Debug.Log("Reset Count=>" + GazeExplosion.instance.Counting());
+
+      //  ShowFinalAsteroids.text = "Record TIME!";//"Asteroids Destroid:\n" 
             //+ PlayerPrefs.GetString("player1Asteroids");
 
    //     ShowFinalTime.text =PlayerPrefs.GetString("player1");

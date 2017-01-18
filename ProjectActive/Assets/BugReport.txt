@@ -1,6 +1,6 @@
 Asteroids still have trouble blowing up
--try button will not work? playerpref? 
+-try again button will not work? playerpref? 
 -asteroid blown up counts for 2 in unity?
 -menu changes here and there * moves position or just fails
--
--
+-FIX Asteroid counter prefab
+-FIX easy mode

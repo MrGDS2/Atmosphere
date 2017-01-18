@@ -1,0 +1,2 @@
+*Add Special Asteroids 
+the sparkle Asteroids take away user asteroid count
