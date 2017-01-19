@@ -168,7 +168,7 @@
     <Compile Include="Assets\Scripts\UIScripts\Rectical.cs" />
     <Compile Include="Assets\Scripts\UIScripts\SceneresetKeys.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ShiftCameraSpace.cs" />
-    <Compile Include="Assets\Scripts\UIScripts\ShowTextTimed.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\ShowResults.cs" />
     <Compile Include="Assets\Scripts\UIScripts\Timer.cs" />
     <Compile Include="Assets\Scripts\UIScripts\UICounting.cs" />
     <Compile Include="Assets\Scripts\UIScripts\UIHub.cs" />

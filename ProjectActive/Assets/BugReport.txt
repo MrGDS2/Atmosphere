@@ -1,6 +1,7 @@
 Asteroids still have trouble blowing up
--try again button will not work? playerpref? 
--asteroid blown up counts for 2 in unity?
+-audio for success wont play after getting X number of asteroids
 -menu changes here and there * moves position or just fails
--FIX Asteroid counter prefab
--FIX easy mode
+-still gotta fix lvl 1
+-asteroids count 2x
+lvl 2/lvl 3
+-position asteroids better so they are easier to hit

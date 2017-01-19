@@ -25,12 +25,12 @@ public class GazeExplosion : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject asteroid;
     public double lookingTime = 0.5;
- //   public Text AsteroidCounter;
+    //   public Text AsteroidCounter;
     public static int Counter = 0;
     public static GazeExplosion instance;
     public AudioClip[] AsteroidSounds;
 
-    private AudioSource audio {  get { return GetComponent<AudioSource>(); } }
+    private AudioSource audio { get { return GetComponent<AudioSource>(); } }
 
     /**Initialize BAng **/
     void Start()
@@ -39,7 +39,7 @@ public class GazeExplosion : MonoBehaviour
 
         /**sound for asteroids explosion**/
         gameObject.AddComponent<AudioSource>();//initialize Audio Source / creates on an object
-       
+
 
 
     }
@@ -48,7 +48,7 @@ public class GazeExplosion : MonoBehaviour
 
 
     void Update()
-    {     
+    {
     }
 
 
@@ -67,72 +67,38 @@ public class GazeExplosion : MonoBehaviour
             /**time of gaze**/
             lookingTime--;
             print("GAZE TIME ==>" + lookingTime);
-            
-           
-            asteroid.GetComponent<MeshRenderer>().enabled = false; 
+
+
+            asteroid.GetComponent<MeshRenderer>().enabled = false;
             PlayClip();
-            Destroy(asteroid,1f); //gives time for destroying object
+            Destroy(asteroid, 1f); //gives time for destroying object
             Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
-      //   //hides mess to play sound longer
-          
+            //   //hides mess to play sound longer
+
             // 1/ 14/17
             Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-          //  Debug.Break();
+            //  Debug.Break();
             Counting();
-    
-
-
-
-            /**goals depending on level**/
-            Scene scene = SceneManager.GetActiveScene();
-            switch (scene.name)
-            {
-                case "AtmosphereEASY":
-                   
-
-          //       AsteroidCounter.text = Counting().ToString() + "/5";
-                    //     PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
-                    Debug.Log("saved asteroids" + "GazeExplosion=>LINE 79");
-
-                    break;
-                case "AtmosphereModerate":
-                //    AsteroidCounter.text = Counter.ToString() + "/10";
-                    break;
-                case "AtmosphereInsane":
-                 //   AsteroidCounter.text = Counter.ToString() + "/15";
-                    break;
-            }
-
-
-
 
 
         }
 
- 
-  
+
+
 
     }
-/**
-    void OnGUI()
-    {
-      
-        
-            GUI.Label(new Rect(0, 0, 200, 20), "Enemies Remaining : " + Counter.ToString());
-        
-    }
-        **/
+
     void PlayClip()
     {
 
         /**Plays Random sound on explosion**/
         int clip;
 
-        clip = Random.Range(0, 9);
+        clip = Random.Range(0, 10);
         audio.clip = AsteroidSounds[clip];
         audio.Play();
         Debug.Log(clip + "sound");
-     //   Debug.Break();
+        //   Debug.Break();
 
     }
 
@@ -168,12 +134,6 @@ public class GazeExplosion : MonoBehaviour
     }
 
 
-
-
-    /** void UpdateAsteroidTracker(string update)
-     {
-         AsteroidCounter.text =update;
-     }**/
 }
 
 

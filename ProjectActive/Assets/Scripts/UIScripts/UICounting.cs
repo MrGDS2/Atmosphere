@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 public class UICounting : MonoBehaviour {
     //public GameObject UICounter;
     public Text Count;
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
      
        
     }
@@ -21,15 +22,17 @@ public class UICounting : MonoBehaviour {
 
 
                 Count.text = GazeExplosion.instance.Counting().ToString() + "/10";
-                //     PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
+               
                 Debug.Log("saved asteroids" + "GazeExplosion=>LINE 79");
 
                 break;
             case "AtmosphereModerate":
                 Count.text = GazeExplosion.instance.Counting().ToString() + "/20";
+             
                 break;
             case "AtmosphereInsane":
                 Count.text = GazeExplosion.instance.Counting().ToString() + "/30";
+              
                 break;
         }
 

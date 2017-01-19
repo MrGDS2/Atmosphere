@@ -22,29 +22,10 @@ public class ReloadLevel : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("Reset Count=>" + GazeExplosion.instance.Counting());
+      //  Debug.Log("Reset Count=>" + GazeExplosion.instance.Counting());
 
-      //  ShowFinalAsteroids.text = "Record TIME!";//"Asteroids Destroid:\n" 
-            //+ PlayerPrefs.GetString("player1Asteroids");
-
-   //     ShowFinalTime.text =PlayerPrefs.GetString("player1");
-
-        // "Time:\n" +
     }
 
-    public void resetKeys()
-    {
-        /** Deletes Player numbers with each restart or progression**/
-          /**  PlayerPrefs.DeleteKey("player1");
-        PlayerPrefs.DeleteKey("player1Asteroids"); **/
-      
-               // PlayerPrefs.DeleteAll();
-           Debug.LogWarning("reset all KEYS*****>");
-
-        
-        
-
-   
-    }
+    
 
 }
