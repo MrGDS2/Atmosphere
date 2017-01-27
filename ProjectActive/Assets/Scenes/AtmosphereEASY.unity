@@ -207,6 +207,7 @@ GameObject:
   - 114: {fileID: 110202651}
   - 223: {fileID: 110202650}
   - 114: {fileID: 110202656}
+  - 114: {fileID: 110202657}
   m_Layer: 0
   m_Name: OVRCameraRig
   m_TagString: Untagged
@@ -353,6 +354,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5164e76ebd208e48a2d4c82824f93fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &110202657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 110202648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932e20686c5dc3f4ab31ce2e3141b6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closemenu: {fileID: 1000011888468758, guid: e1eb8e8c5d02a694abfaa49916d44983, type: 2}
 --- !u!1 &138119241
 GameObject:
   m_ObjectHideFlags: 0
@@ -4040,7 +4053,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 761425099
+  randomSeed: -1681058914
   InitialModule:
     serializedVersion: 2
     enabled: 1

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/EndGameModerate.unity
+- path: Assets/Scenes/AtmosphereInsane.unity
   isLoaded: 1
   isActive: 1

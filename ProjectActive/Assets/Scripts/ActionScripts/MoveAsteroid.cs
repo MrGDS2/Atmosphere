@@ -18,4 +18,6 @@ public class MoveAsteroid : MonoBehaviour {
 		transform.Translate (0, 0, speed * Time.deltaTime); //moves object towards user
 	
 	}
+
+    
 }

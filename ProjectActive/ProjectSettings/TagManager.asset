@@ -12,6 +12,8 @@ TagManager:
   - dontmove
   - listlast
   - SpecialAsteroid
+  - yes
+  - no
   layers:
   - Default
   - TransparentFX
