@@ -18,6 +18,19 @@ public class UICounting : MonoBehaviour {
         Scene scene = SceneManager.GetActiveScene();
  switch (scene.name)
         {
+            /** 2/5/17
+            case "Tutorial":
+
+
+                Count.text = GazeExplosion.instance.Counting().ToString() + "/3";
+
+                Debug.Log("saved asteroids" + "GazeExplosion=>LINE 79");
+
+                break;
+            **/
+
+
+
             case "AtmosphereEASY":
 
 
@@ -34,6 +47,8 @@ public class UICounting : MonoBehaviour {
                 Count.text = GazeExplosion.instance.Counting().ToString() + "/30";
               
                 break;
+
+
         }
 
         /*gets number from 
