@@ -30,6 +30,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
 
 using System.Runtime.InteropServices; // required for DllImpor
@@ -285,6 +286,9 @@ public class OVRInspector : MonoBehaviour
 #region StartUpFunctions 
     void Awake()
     {
+
+
+
         LockCursor();
         //sets left and right panels to false 
         /**leaving only middle panel
@@ -822,22 +826,24 @@ public class OVRInspector : MonoBehaviour
 
         /**delegate is used as a pointer 
          *  A delegate is a reference to a method.**/
-        recenterButton = leftPanel.AddButton("Recenter", delegate { Recenter(); }, buttonPrefab);
-       
+      //  recenterButton = leftPanel.AddButton("Recenter", delegate { Recenter(); }, buttonPrefab);
+        leftPanel.AddButton("Play Tutorial", delegate { LoadTutorial(); }, buttonPrefab);  //tutorial 2/5/17
 
         if (allowClose)
         {
-            leftPanel.AddButton("Start", delegate { Hide(); }, buttonPrefab);
+            leftPanel.AddButton("Start Game", delegate { Hide(); }, buttonPrefab);
         }
 
         leftPanel.AddButton("Quit", delegate { AskClose(); }, buttonPrefab);
 
+       
 
-    /**    foreach (OVRInspectorContextDetails details in contextList)
-        {
-            if (details.GoesLastOnMenu())   //takes out quit Button 1/6/17 changed
-                AddContextButton(details);
-        }**/
+
+        /**    foreach (OVRInspectorContextDetails details in contextList)
+            {
+                if (details.GoesLastOnMenu())   //takes out quit Button 1/6/17 changed
+                    AddContextButton(details);
+            }**/
     }
 
     /// <summary>
@@ -852,6 +858,15 @@ public class OVRInspector : MonoBehaviour
         centerPanel.AddButton("No", delegate { Hide(); }, buttonPrefab);
 
     }
+
+    void LoadTutorial()
+    {
+
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(7);
+
+    }
+
     void CleanUpTopMenu()
     {
         // remove buttons with no context object

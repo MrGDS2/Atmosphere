@@ -168,6 +168,8 @@
     <Compile Include="Assets\Scripts\Alert\Incoming.cs" />
     <Compile Include="Assets\Scripts\EndGame\ReloadLevel.cs" />
     <Compile Include="Assets\Scripts\GoldenNugDestroyed.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\BuildScreenTutorial.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Voicehelp.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ButtonHover.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ChangeText.cs" />
     <Compile Include="Assets\Scripts\UIScripts\CloseMenu.cs" />

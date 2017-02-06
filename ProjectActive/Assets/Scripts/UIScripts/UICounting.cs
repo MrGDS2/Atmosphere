@@ -18,16 +18,16 @@ public class UICounting : MonoBehaviour {
         Scene scene = SceneManager.GetActiveScene();
  switch (scene.name)
         {
-            /** 2/5/17
+            /** 2/5/17  **/
             case "Tutorial":
 
 
-                Count.text = GazeExplosion.instance.Counting().ToString() + "/3";
+                Count.text = GazeExplosion.instance.Counting().ToString() + "/4";
 
                 Debug.Log("saved asteroids" + "GazeExplosion=>LINE 79");
 
                 break;
-            **/
+          
 
 
 

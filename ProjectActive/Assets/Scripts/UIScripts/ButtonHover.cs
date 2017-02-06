@@ -8,6 +8,7 @@ public class ButtonHover : MonoBehaviour {
    // public GameObject Object;
 	   public GameObject LoadingImage;
       public int lvl;
+        
 
 void Counter()
     {
@@ -61,11 +62,12 @@ void Counter()
     {
         if (!PlayerPrefs.GetString("player1Asteroids").Equals(null))
         {
-            PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteAll();                            //Deletes all prefs saved 
             Debug.Log("reset all KEY==>" + "Button Hover");
         }
 
-        LoadingImage.SetActive(true);
+         LoadingImage.SetActive(true);
+
         SceneManager.LoadScene(level);
     }
 

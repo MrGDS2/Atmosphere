@@ -63,10 +63,21 @@ public class Timer : MonoBehaviour {
     {
         /**goals depending on level**/
         Scene scene = SceneManager.GetActiveScene();
+
+
+        if (GazeExplosion.instance.Counting() == 4 && scene.name.Equals("Tutorial"))
+        {
+            SuccessPing();
+            
+            AtmosphereTimer.color = Color.green;
+            AsteroidCounter.color = Color.green;
+            SceneManager.LoadScene(0);//loads "Main"
+          
+        }
         if (GazeExplosion.instance.Counting()==10 &&  scene.name.Equals("AtmosphereEASY"))
         {   
 
-               
+             SuccessPing();    
             goal = true;//stop timer
             PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
             PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
@@ -75,11 +86,11 @@ public class Timer : MonoBehaviour {
             Debug.Log("New High score===>" + Scores.ToString());
             AtmosphereTimer.color = Color.green;
             AsteroidCounter.color = Color.green;
-           SuccessPing(); 
+          
             randomAsteroids.instance.stop = true;//stops random asteroids
             Debug.Log("Scene " + scene.name);
-           
-            SceneManager.LoadScene(4);//loads "EndGame"
+           SceneManager.LoadScene(4);//loads "EndGame"
+            
          //   Debug.Break();
             Debug.Log("playerpref "  + PlayerPrefs.HasKey("player1"));
 
@@ -87,7 +98,7 @@ public class Timer : MonoBehaviour {
         if (GazeExplosion.instance.Counting() == 15 && scene.name.Equals("EasyLvL2"))
         {
 
-
+            SuccessPing(); //plays sound
             goal = true;//stop timer
                         //    PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
                         //   Debug.Log("saved time" + "Timer=>LINE 64");
@@ -95,7 +106,7 @@ public class Timer : MonoBehaviour {
             Debug.Log("New High score===>" + Scores.ToString());
             AtmosphereTimer.color = Color.green;
             AsteroidCounter.color = Color.green;
-            SuccessPing(); //plays sound
+          
             randomAsteroids.instance.stop = true;//stops random asteroids
             Debug.Log("Scene " + scene.name);
          //   SceneManager.LoadScene(6);//loads "EndGame"
@@ -106,12 +117,13 @@ public class Timer : MonoBehaviour {
         }
         else if (GazeExplosion.instance.Counting() == 20 && scene.name.Equals("AtmosphereModerate"))
         {
+            SuccessPing(); //plays sound
             goal = true;//stop timer
             PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
             PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
             AtmosphereTimer.color = Color.green;
          AsteroidCounter.color = Color.green;
-            SuccessPing(); //plays sound
+           
             randomAsteroids.instance.stop = true;//stops random asteroids
             Debug.Log("Scene " + scene.name);                                    
             SceneManager.LoadScene(5);//loads "EndGame"                                  
@@ -138,12 +150,13 @@ public class Timer : MonoBehaviour {
         }
         else  if (GazeExplosion.instance.Counting() == 30 && scene.name.Equals("AtmosphereInsane"))
         {
+            SuccessPing(); //plays sound
             goal = true;//stop timer
             PlayerPrefs.SetString("player1Asteroids", AsteroidCounter.text);//saves player asteroids
             PlayerPrefs.SetString("player1", AtmosphereTimer.text);//saves player time
             AtmosphereTimer.color = Color.green;
           AsteroidCounter.color = Color.green;
-            SuccessPing(); //plays sound
+         
             randomAsteroids.instance.stop = true;//stops random asteroids
              Debug.Log("Scene " + scene.name);
             SceneManager.LoadScene(6);//loads "EndGame"
