@@ -118,11 +118,11 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +155,7 @@
     <Compile Include="Assets\OVR\Editor\OVRMoonlightLoader.cs" />
     <Compile Include="Assets\OVR\Editor\OVRScreenshotWizard.cs" />
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\Editor\UIWidgetMenuItems.cs" />
+    <Compile Include="Assets\PUNVoice\Editor\ExitPlayModeOnScriptCompile.cs" />
     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\AccountService.cs" />
     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\CullAreaEditor.cs" />
     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonConverter.cs" />
@@ -173,9 +174,6 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PhotonPlayer\Editor\PlayerRoomIndexingInspector.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PhotonPlayer\Editor\PunTeamsInspector.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\Editor\ExposeProperties.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\Editor\VolumetricLineBehaviorEditor.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\Editor\VolumetricLineStripBehaviorEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Activity Indicators\ReadMe_txt.txt" />
@@ -194,9 +192,12 @@
     <None Include="Assets\OVRInspector\Shaders\Particle-Alpha-Premultiply-AfterTrans.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTest.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTestFont.shader" />
-    <None Include="Assets\Photon Unity Networking\changelog.txt" />
-    <None Include="Assets\Photon Unity Networking\link.xml" />
-    <None Include="Assets\Photon Unity Networking\readme.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Pop-J_Fairba-8421_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Reminder-public_d-291_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Fonts\Orbitron Black.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Textures\SkyBox-Texture.txt" />
+    <None Include="Assets\PUNVoice\changelog.txt" />
+    <None Include="Assets\PUNVoice\readme.txt" />
     <None Include="Assets\Plugins\Photon3Unity3D.xml" />
     <None Include="Assets\Plugins\release_history.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
@@ -299,12 +300,6 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

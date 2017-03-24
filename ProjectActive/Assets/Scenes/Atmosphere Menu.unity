@@ -7261,7 +7261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a966124f09a59dc4e80bc4993a5dacbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Multiplayer
+  level: VR Together
   bloop: {fileID: 8300000, guid: 9ccbf1bc4f49a8a4781120ebcd39e782, type: 3}
 --- !u!114 &1617783042
 MonoBehaviour:
@@ -7295,7 +7295,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Multiplayer
+  m_Text: VR Together
 --- !u!222 &1617783043
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+public class NetManager : MonoBehaviour
+{
 
-public class NetManager : MonoBehaviour {
+    // public GameObject connectorprefab;
+    public Text Player;
+    public Text Player2;
 
-    public GameObject Avatarprefab;
+    private static int Count;
+    //  private Color Connected = ColorUtility.TryParseHtmlString("A7F4BAFF",)
     private const string VERSION = "1.0";
-	// Use this for initialization
-	void Start () {
-		        PhotonNetwork.ConnectUsingSettings(VERSION);//reads data and throw to server
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings(VERSION);//reads data and throw to server
+        var temp = PhotonVoiceNetwork.Client;//sets up client for chating
+      //  randomAsteroids.instance.stop = true;//stops asteroids
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        OnFullroom();//updates room size
+        OnDisconnect();//updates room size disconnect
 
     }
 
@@ -46,6 +58,69 @@ public class NetManager : MonoBehaviour {
     public void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
-        PhotonNetwork.Instantiate(Avatarprefab.name, Vector3.zero, Quaternion.identity,0);
+        //var temp= PhotonNetwork.Instantiate(connectorprefab.name, connectorprefab.transform.position,connectorprefab.transform.rotation, 0);
+
+        //temp.transform.parent = parentobject.transform;
+        // PhotonNetwork.Instantiate(connectorprefab.name, Vector3.zero, Quaternion.identity,0);
+        Player.color = Color.green;
+       
+
+        Debug.Log("OnJoinedRoom()" + " Players:" + PhotonNetwork.countOfPlayers);
+
+        
+
+
+
     }
+
+    void OnFullroom()
+    {
+        if (PhotonNetwork.room.playerCount == 2)
+        { 
+                                                                                     //when player 2 joins room
+                                                                                   //Player 2 lights up green indicating connection
+            Player2.color = Color.green;
+            Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
+            Timeout.instance.players = true;
+            randomAsteroids.instance.stop = false;//starts asteroids
+        }
+        else Timeout.instance.players = false;
+
+    }
+    void OnDisconnect()
+    {
+        
+        
+           // randomAsteroids.instance.stop = true;//stops asteroids
+        
+
+       
+        if (PhotonNetwork.room.playerCount < 2 && PhotonNetwork.isNonMasterClientInRoom)     //player 2 DC'D =>disconnected
+        {
+            Debug.Log( "player2 dcd:" + PhotonNetwork.isNonMasterClientInRoom.ToString());
+            Player2.color = Color.red;
+        }                                                                       /** checks to see if player 1 has DC'd => disconnected**/
+        if (PhotonNetwork.room.playerCount < 2 && !PhotonNetwork.isNonMasterClientInRoom)
+        {      
+             Player.color = Color.red;
+            Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
+            Timeout.instance.players = false;//stops clock
+            Debug.Log("player2 dcd: now " + PhotonNetwork.isNonMasterClientInRoom.ToString());
+        }
+
+
+
+    }
+
+    /**
+    public void OnPhotonPlayerConnected(PhotonPlayer player)
+{
+    Debug.Log("Player Connected " + player.name);
+}
+
+public void OnPhotonPlayerDisconnected(PhotonPlayer player)
+    {
+        Debug.Log("Player Disconnected " + player.name);
+    }
+ **/
 }

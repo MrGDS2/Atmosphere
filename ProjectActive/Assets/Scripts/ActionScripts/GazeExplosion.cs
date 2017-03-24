@@ -25,7 +25,6 @@ public class GazeExplosion : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject asteroid;
     public double lookingTime = 0.5;
-    //   public Text AsteroidCounter;
     public static int Counter = 0;
     public static GazeExplosion instance;
     public AudioClip[] AsteroidSounds;
@@ -51,15 +50,8 @@ public class GazeExplosion : MonoBehaviour
     {
     }
 
-
-    /**Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    RaycastHit hit;
-         if (Physics.Raycast(ray, out hit, 2))
-             Debug.DrawLine(ray.origin, hit.point);**/
-    public void BOOM()
-    {
-        // UpdateAsteroidCount();
-
+    public void BOOM() { 
+    
         RaycastHit hit;
 
         if (Physics.Raycast(new Ray(Camera.main.transform.position, Camera.main.transform.rotation * Vector3.forward), out hit, 500.0f)) //adjust the raycast  FIXME:11/22/16
@@ -71,13 +63,13 @@ public class GazeExplosion : MonoBehaviour
 
             asteroid.GetComponent<MeshRenderer>().enabled = false;
             PlayClip();
-            Destroy(asteroid, 1f); //gives time for destroying object
+            Destroy(asteroid, 1f);                                                                      //gives time for destroying object
             Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
-            //   //hides mess to play sound longer
+                                                                                                       //hides mess to play sound longer
 
-            // 1/ 14/17
+                                                                                                                 // 1/ 14/17
             Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-            //  Debug.Break();
+            
             Counting();
 
 
@@ -98,7 +90,7 @@ public class GazeExplosion : MonoBehaviour
         audio.clip = AsteroidSounds[clip];
         audio.Play();
         Debug.Log(clip + "sound");
-        //   Debug.Break();
+     
 
     }
 
@@ -129,7 +121,7 @@ public class GazeExplosion : MonoBehaviour
     public void Gazeoff()
     {
         CancelInvoke();
-        //  lookingTime =0.5;
+     
 
     }
 

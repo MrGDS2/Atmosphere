@@ -73,11 +73,11 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +146,30 @@
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeEventTrigger.cs" />
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeScroller.cs" />
     <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRProgressIndicator.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\BaseController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\BetterToggle.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\ChangePOV.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\CharacterInstantiation.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\Highlighter.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\MouseLookHelper.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\OrthographicController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\PushToTalkPrivateButton.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\PushToTalkScript.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\SoundsForJoinAndLeave.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\VoiceDemoUI.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\AudioClipWrapper.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\AudioStreamPlayer.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\MicWrapper.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceNetwork.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceRecorder.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceSettings.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceSpeaker.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\Gui.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\HighlightRecorder.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\HighlightSpeaker.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\ViewDrag.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
@@ -258,7 +282,11 @@
     <Compile Include="Assets\Scripts\Alert\Incoming.cs" />
     <Compile Include="Assets\Scripts\EndGame\ReloadLevel.cs" />
     <Compile Include="Assets\Scripts\GoldenNugDestroyed.cs" />
+    <Compile Include="Assets\Scripts\Network\MirrorScript.cs" />
     <Compile Include="Assets\Scripts\Network\NetManager.cs" />
+    <Compile Include="Assets\Scripts\Network\SyncGazeExplosion.cs" />
+    <Compile Include="Assets\Scripts\Network\Timeout.cs" />
+    <Compile Include="Assets\Scripts\Network\TrackAsteroids.cs" />
     <Compile Include="Assets\Scripts\Tutorial\BuildScreenTutorial.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Voicehelp.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ButtonHover.cs" />
@@ -284,15 +312,6 @@
     <Compile Include="Assets\Sky FX Pack\Scripts\RotateBehaviour.cs" />
     <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />
     <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
-    <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
-    <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
-    <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\SetFovGlobalShaderVariable.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\Utils\ExposePropertyAttribute.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\Utils\TransformExtensionMethods.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
-    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricMultiLineBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Activity Indicators\ReadMe_txt.txt" />
@@ -311,9 +330,12 @@
     <None Include="Assets\OVRInspector\Shaders\Particle-Alpha-Premultiply-AfterTrans.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTest.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTestFont.shader" />
-    <None Include="Assets\Photon Unity Networking\changelog.txt" />
-    <None Include="Assets\Photon Unity Networking\link.xml" />
-    <None Include="Assets\Photon Unity Networking\readme.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Pop-J_Fairba-8421_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Reminder-public_d-291_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Fonts\Orbitron Black.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Textures\SkyBox-Texture.txt" />
+    <None Include="Assets\PUNVoice\changelog.txt" />
+    <None Include="Assets\PUNVoice\readme.txt" />
     <None Include="Assets\Plugins\Photon3Unity3D.xml" />
     <None Include="Assets\Plugins\release_history.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
@@ -416,12 +438,6 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

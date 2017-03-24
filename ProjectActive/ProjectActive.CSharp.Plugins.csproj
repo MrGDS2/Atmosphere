@@ -73,14 +73,39 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
     </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\Extensions.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\FriendInfo.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\LoadBalancingClient.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\LoadBalancingPeer.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\Player.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\Room.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\RoomInfo.cs" />
+    <Compile Include="Assets\Plugins\PhotonLoadbalancingApi\WebRpc.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\Bandwidth.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\Channels.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\Complexity.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\Delay.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\ForceChannels.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\OpusApplicationType.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\OpusCtlGetRequest.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\OpusCtlSetRequest.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\OpusStatusCode.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\SamplingRate.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\Enums\SignalHint.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\OpusDecoder.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\OpusEncoder.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\OpusException.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\POpusCodec\OpusWrapper.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\Core\VoiceClient.cs" />
+    <Compile Include="Assets\Plugins\PhotonVoiceApi\LoadBalancingFrontend.cs" />
     <Compile Include="Assets\Plugins\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
@@ -233,9 +258,12 @@
     <None Include="Assets\OVRInspector\Shaders\Particle-Alpha-Premultiply-AfterTrans.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTest.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTestFont.shader" />
-    <None Include="Assets\Photon Unity Networking\changelog.txt" />
-    <None Include="Assets\Photon Unity Networking\link.xml" />
-    <None Include="Assets\Photon Unity Networking\readme.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Pop-J_Fairba-8421_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Reminder-public_d-291_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Fonts\Orbitron Black.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Textures\SkyBox-Texture.txt" />
+    <None Include="Assets\PUNVoice\changelog.txt" />
+    <None Include="Assets\PUNVoice\readme.txt" />
     <None Include="Assets\Plugins\Photon3Unity3D.xml" />
     <None Include="Assets\Plugins\release_history.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
@@ -338,12 +366,6 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
-    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
