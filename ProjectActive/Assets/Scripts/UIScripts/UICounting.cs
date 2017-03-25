@@ -48,6 +48,11 @@ public class UICounting : MonoBehaviour {
               
                 break;
 
+            case "VRTogether":
+                Count.text = SyncGazeExplosion.instance.Counting().ToString() + "/30";
+
+                break;
+
 
         }
 

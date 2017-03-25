@@ -258,12 +258,6 @@
     <None Include="Assets\OVRInspector\Shaders\Particle-Alpha-Premultiply-AfterTrans.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTest.shader" />
     <None Include="Assets\OVRInspector\Shaders\UI-OptionalZTestFont.shader" />
-    <None Include="Assets\PUNVoice\DemoVoice\Audio\Pop-J_Fairba-8421_hifi.mp3.txt" />
-    <None Include="Assets\PUNVoice\DemoVoice\Audio\Reminder-public_d-291_hifi.mp3.txt" />
-    <None Include="Assets\PUNVoice\DemoVoice\Fonts\Orbitron Black.txt" />
-    <None Include="Assets\PUNVoice\DemoVoice\Textures\SkyBox-Texture.txt" />
-    <None Include="Assets\PUNVoice\changelog.txt" />
-    <None Include="Assets\PUNVoice\readme.txt" />
     <None Include="Assets\Plugins\Photon3Unity3D.xml" />
     <None Include="Assets\Plugins\release_history.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />

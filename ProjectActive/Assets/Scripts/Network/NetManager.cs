@@ -8,7 +8,7 @@ public class NetManager : MonoBehaviour
     // public GameObject connectorprefab;
     public Text Player;
     public Text Player2;
-
+    
     private static int Count;
     //  private Color Connected = ColorUtility.TryParseHtmlString("A7F4BAFF",)
     private const string VERSION = "1.0";
@@ -58,11 +58,11 @@ public class NetManager : MonoBehaviour
     public void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
-        //var temp= PhotonNetwork.Instantiate(connectorprefab.name, connectorprefab.transform.position,connectorprefab.transform.rotation, 0);
+       // var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position,UI.transform.rotation, 0);
 
-        //temp.transform.parent = parentobject.transform;
-        // PhotonNetwork.Instantiate(connectorprefab.name, Vector3.zero, Quaternion.identity,0);
-        Player.color = Color.green;
+       // temp.transform.parent = parentobject.transform;
+         //PhotonNetwork.Instantiate(UI.name, UI.transform.position, UI.transform.rotation,0);
+       Player.color = Color.green;
        
 
         Debug.Log("OnJoinedRoom()" + " Players:" + PhotonNetwork.countOfPlayers);

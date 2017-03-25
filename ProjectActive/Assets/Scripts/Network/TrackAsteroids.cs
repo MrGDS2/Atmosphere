@@ -35,7 +35,9 @@ public class TrackAsteroids : Photon.MonoBehaviour {
 
             /**Spawn position**/
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), Random.Range(-spawnValues.y, spawnValues.y), Random.Range(-spawnValues.z, spawnValues.z));
-            PhotonNetwork.Instantiate(asteroids[randAsteroid].name, spawnPosition, Quaternion.identity,0);//creates positons and spawns asteroids
+            PhotonNetwork.Instantiate(asteroids[randAsteroid].name, spawnPosition + transform.TransformPoint(Random.Range(-spawnValues.x, spawnValues.x),
+               0, Random.Range(-spawnValues.y, spawnValues.y)), Quaternion.identity,0);
+            //  PhotonNetwork.Instantiate(asteroids[randAsteroid].name, spawnPosition, Quaternion.identity,0);//creates positons and spawns asteroids
 
             yield return new WaitForSeconds(spawnWait);
         }

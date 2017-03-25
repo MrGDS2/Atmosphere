@@ -22,6 +22,7 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
         /**sound for asteroids explosion**/
         gameObject.AddComponent<AudioSource>();//initialize Audio Source / creates on an object
 
+      //  PhotonNetwork.Instantiate(UIhub.name, UIhub.transform.position, UIhub.transform.rotation, 0);
 
 
     }
@@ -50,9 +51,15 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
 
             asteroid.GetComponent<MeshRenderer>().enabled = false;
             PlayClip();
-            PhotonNetwork.Destroy(asteroid); //destroys over network
-            PhotonNetwork.Instantiate(explosionPrefab.name, asteroid.transform.position, asteroid.transform.rotation,0);
-          
+            
+           // PhotonNetwork.Instantiate(explosionPrefab.name, asteroid.transform.position, asteroid.transform.rotation,0);
+           PhotonNetwork.Destroy(asteroid);
+            // Destroy(asteroid,1f);
+         Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
+          //destroys over network
+             // 
+
+
             //hides mess to play sound longer
 
             // 1/ 14/17
