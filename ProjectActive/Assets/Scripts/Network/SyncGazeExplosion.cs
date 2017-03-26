@@ -50,16 +50,18 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
 
 
             asteroid.GetComponent<MeshRenderer>().enabled = false;
-            PlayClip();
-            
-           // PhotonNetwork.Instantiate(explosionPrefab.name, asteroid.transform.position, asteroid.transform.rotation,0);
-           PhotonNetwork.Destroy(asteroid);
-            // Destroy(asteroid,1f);
-         Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
+
+
+            // PhotonNetwork.Instantiate(explosionPrefab.name, asteroid.transform.position, asteroid.transform.rotation,0);
+             PlayClip();
+      
+           
+            //  Destroy(asteroid,1f);
+            PhotonView.Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
           //destroys over network
              // 
 
-
+          PhotonNetwork.Destroy(asteroid);
             //hides mess to play sound longer
 
             // 1/ 14/17

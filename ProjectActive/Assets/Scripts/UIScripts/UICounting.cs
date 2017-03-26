@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class UICounting : MonoBehaviour {
+public class UICounting : Photon.MonoBehaviour {
     //public GameObject UICounter;
     public Text Count;
 
@@ -49,8 +49,9 @@ public class UICounting : MonoBehaviour {
                 break;
 
             case "VRTogether":
-                Count.text = SyncGazeExplosion.instance.Counting().ToString() + "/30";
-
+            //    if(photonView.isMine)
+                    Count.text = SyncGazeExplosion.instance.Counting().ToString() + "/30";
+               
                 break;
 
 
