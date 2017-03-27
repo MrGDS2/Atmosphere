@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MirrorScript : Photon.MonoBehaviour
 {
-    public GameObject UIhub;
+    //public GameObject UIhub;
     private static System.EventArgs e;
    OVRTouchpad.TouchArgs touchArgs = (OVRTouchpad.TouchArgs)e;
     // Update is called once per frame
@@ -13,7 +13,7 @@ public class MirrorScript : Photon.MonoBehaviour
 
     void Start()
     {
-        PhotonNetwork.Instantiate(UIhub.name, UIhub.transform.position, UIhub.transform.rotation, 0);
+       // PhotonNetwork.Instantiate(UIhub.name, UIhub.transform.position, UIhub.transform.rotation, 0);
 
     }
     void Update()

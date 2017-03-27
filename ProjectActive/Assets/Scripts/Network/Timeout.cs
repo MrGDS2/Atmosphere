@@ -7,7 +7,7 @@ public class Timeout : MonoBehaviour
     public Text timer;
     public static Timeout instance;
     public bool players;
-    float minutes = 5;
+    float minutes = 2;
     float seconds = 0;
     float miliseconds = 0;
   
@@ -28,7 +28,7 @@ public class Timeout : MonoBehaviour
                 if (seconds <= 0)
                 {
                     minutes--;
-                    seconds = 59;
+                    seconds = 60;
                 }
                 else if (seconds >= 0){
                     seconds--;

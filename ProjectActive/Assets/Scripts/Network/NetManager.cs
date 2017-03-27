@@ -8,7 +8,7 @@ public class NetManager : MonoBehaviour
    //  public GameObject UI,parentobject;
     public Text Player;
     public Text Player2;
-    public Text Count;
+    private int Count;
 
   //  private static int Count;
     //  private Color Connected = ColorUtility.TryParseHtmlString("A7F4BAFF",)
@@ -60,10 +60,12 @@ public class NetManager : MonoBehaviour
     public void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
-      //  var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position,UI.transform.rotation, 0);
+        //  var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position,UI.transform.rotation, 0);
 
-      //  temp.transform.parent = parentobject.transform;
-       //  PhotonNetwork.Instantiate(UI.name, Vector3.zero, Quaternion.identity,0);
+        //  temp.transform.parent = parentobject.transform;
+        //  PhotonNetwork.Instantiate(UI.name, Vector3.zero, Quaternion.identity,0);
+       
+       if(Count==0)//saying player one has joined
        Player.color = Color.green;
        
 
@@ -78,9 +80,10 @@ public class NetManager : MonoBehaviour
     void OnFullroom()
     {
         if (PhotonNetwork.room.playerCount == 2)
-        { 
-                                                                                     //when player 2 joins room
-                                                                                   //Player 2 lights up green indicating connection
+        {
+            //when player 2 joins room
+            Count++;//count goes up and if player 1 leaves we will be notified
+            //Player 2 lights up green indicating connection
             Player2.color = Color.green;
             Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
             Timeout.instance.players = true;
@@ -97,12 +100,15 @@ public class NetManager : MonoBehaviour
         
 
        
-        if (PhotonNetwork.room.playerCount < 2 && PhotonNetwork.isNonMasterClientInRoom)     //player 2 DC'D =>disconnected
+        if (PhotonNetwork.room.playerCount < 2 &&
+            PhotonNetwork.isNonMasterClientInRoom)     //player 2 DC'D =>disconnected
         {
             Debug.Log( "player2 dcd:" + PhotonNetwork.isNonMasterClientInRoom.ToString());
             Player2.color = Color.red;
         }                                                                       /** checks to see if player 1 has DC'd => disconnected**/
-        if (PhotonNetwork.room.playerCount < 2 && !PhotonNetwork.isNonMasterClientInRoom)
+        if (PhotonNetwork.room.playerCount < 2 && 
+            !PhotonNetwork.isNonMasterClientInRoom
+            && Count!=0)
         {      
              Player.color = Color.red;
             Debug.Log(" Players:" + PhotonNetwork.room.playerCount);

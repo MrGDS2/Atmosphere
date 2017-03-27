@@ -11,7 +11,7 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
     public static int Counter = 0;
     public static SyncGazeExplosion instance;
     public AudioClip[] AsteroidSounds;
-
+    public ArrayList AsteroidsDestroyed;
     private AudioSource audio { get { return GetComponent<AudioSource>(); } }
 
     /**Initialize BAng **/
@@ -67,7 +67,10 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
             // 1/ 14/17
             Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
             //  Debug.Break();
-            Counting();
+       // int netowrkcount=  Counting();
+       
+            AsteroidsDestroyed.Add(asteroid);
+            Debug.Log("Asteroids Array " + AsteroidsDestroyed.ToString());
 
 
         }
