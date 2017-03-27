@@ -20,14 +20,14 @@ public class MirrorScript : Photon.MonoBehaviour
     {  
      //   talk.Transmit = true;
 
-        if (photonView.isMine) {
+      //  if (photonView.isMine) {
 
             //enables voice chat
             GetComponent<PhotonVoiceRecorder>().enabled = true;
 
           
 
-        }
+      //  }
     }
 
   

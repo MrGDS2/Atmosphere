@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class NetManager : MonoBehaviour
 {
 
-   //  public GameObject UI,parentobject;
+     public GameObject UI,UI2,parentobject;
     public Text Player;
     public Text Player2;
     private int Count;
@@ -63,7 +63,7 @@ public class NetManager : MonoBehaviour
         //  var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position,UI.transform.rotation, 0);
 
         //  temp.transform.parent = parentobject.transform;
-        //  PhotonNetwork.Instantiate(UI.name, Vector3.zero, Quaternion.identity,0);
+         PhotonNetwork.Instantiate(UI.name, UI.transform.position, Quaternion.identity,0);
        
        if(Count==0)//saying player one has joined
        Player.color = Color.green;
@@ -88,6 +88,7 @@ public class NetManager : MonoBehaviour
             Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
             Timeout.instance.players = true;
             randomAsteroids.instance.stop = false;//starts asteroids
+            PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, Quaternion.identity, 0);
         }
         else Timeout.instance.players = false;
 
