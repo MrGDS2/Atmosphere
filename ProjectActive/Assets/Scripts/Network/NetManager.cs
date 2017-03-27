@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class NetManager : MonoBehaviour
 {
 
-     public GameObject UI,UI2,parentobject;
+     public GameObject UI,parentobject;
     public Text Player;
     public Text Player2;
     private int Count;
@@ -18,7 +18,9 @@ public class NetManager : MonoBehaviour
     {
         PhotonNetwork.ConnectUsingSettings(VERSION);//reads data and throw to server
         var temp = PhotonVoiceNetwork.Client;//sets up client for chating
-      //  randomAsteroids.instance.stop = true;//stops asteroids
+                                             //  randomAsteroids.instance.stop = true;//stops asteroids
+
+
     }
 
     // Update is called once per frame
@@ -60,11 +62,12 @@ public class NetManager : MonoBehaviour
     public void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
-        //  var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position,UI.transform.rotation, 0);
+        
 
-        //  temp.transform.parent = parentobject.transform;
-         PhotonNetwork.Instantiate(UI.name, UI.transform.position, Quaternion.identity,0);
-       
+      //  Vector3 prefabPos = new Vector3(UI.transform.position.x, UI.transform.position.y, UI.transform.position.z);//3.27.17
+      var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position, UI.transform.rotation, 0);
+
+       temp.transform.parent = parentobject.transform;
        if(Count==0)//saying player one has joined
        Player.color = Color.green;
        
@@ -76,7 +79,7 @@ public class NetManager : MonoBehaviour
 
 
     }
-
+    
     void OnFullroom()
     {
         if (PhotonNetwork.room.playerCount == 2)
@@ -88,7 +91,7 @@ public class NetManager : MonoBehaviour
             Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
             Timeout.instance.players = true;
             randomAsteroids.instance.stop = false;//starts asteroids
-            PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, Quaternion.identity, 0);
+         //   PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, Quaternion.identity, 0);
         }
         else Timeout.instance.players = false;
 
