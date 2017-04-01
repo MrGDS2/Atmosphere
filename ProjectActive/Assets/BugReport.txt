@@ -1,7 +1,6 @@
-Asteroids still have trouble blowing up
--audio for success wont play after getting X number of asteroids
--menu changes here and there * moves position or just fails
--still gotta fix lvl 1
--asteroids count 2x
-lvl 2/lvl 3
--position asteroids better so they are easier to hit
+Multiplayer 
+ counts for player 1 and 2 
+-but score not shown over the network
+
+
+-Fix multiplayer mics

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SyncGazeExplosion : Photon.MonoBehaviour {
 
-    public GameObject explosionPrefab;
+    public GameObject explosionPrefab,UI, parentobject;
     public GameObject asteroid;
     public double lookingTime = 0.5;
     //   public Text AsteroidCounter;
@@ -22,8 +22,9 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
         /**sound for asteroids explosion**/
         gameObject.AddComponent<AudioSource>();//initialize Audio Source / creates on an object
 
-      //  PhotonNetwork.Instantiate(UIhub.name, UIhub.transform.position, UIhub.transform.rotation, 0);
-
+        //  PhotonNetwork.Instantiate(UIhub.name, UIhub.transform.position, UIhub.transform.rotation, 0);
+        PhotonNetwork.sendRate = 20; //how fast the data is sent back and forth
+        PhotonNetwork.sendRateOnSerialize = 10;
 
     }
 
@@ -45,30 +46,22 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
 
         if (Physics.Raycast(new Ray(Camera.main.transform.position, Camera.main.transform.rotation * Vector3.forward), out hit, 500.0f)) //adjust the raycast  FIXME:11/22/16
         {
-            /**time of gaze**/
-            lookingTime--;
-            print("GAZE TIME ==>" + lookingTime);
+              asteroid.GetComponent<MeshRenderer>().enabled = false;   //hides mess to play sound longer
 
 
-            asteroid.GetComponent<MeshRenderer>().enabled = false;
-
-
-            // PhotonNetwork.Instantiate(explosionPrefab.name, asteroid.transform.position, asteroid.transform.rotation,0);
+           
              PlayClip();
       
            
-            //  Destroy(asteroid,1f);
+         
             PhotonView.Instantiate(explosionPrefab, asteroid.transform.position, asteroid.transform.rotation);
-          //destroys over network
-             // 
-
-          PhotonNetwork.Destroy(asteroid);
-            //hides mess to play sound longer
+            PhotonNetwork.Destroy(asteroid);  //destroys over network
+         
 
             // 1/ 14/17
             Debug.Log(asteroid.name + "===> has been Blown up" + "Asteroids: " + Counter++);
-            //  Debug.Break();
-        int networkcount=  Counting();
+          
+              Counting();
 
 
 
@@ -81,6 +74,8 @@ public class SyncGazeExplosion : Photon.MonoBehaviour {
 
 
     }
+
+   
 
     void PlayClip()
     {

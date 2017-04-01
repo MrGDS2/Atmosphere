@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class NetManager : MonoBehaviour
 {
 
-     public GameObject UI,parentobject;
+     public GameObject UI2,p2Avatar,parentobject;
     public Text Player;
     public Text Player2;
     private int Count;
@@ -62,19 +62,20 @@ public class NetManager : MonoBehaviour
     public void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
-        
-
-      //  Vector3 prefabPos = new Vector3(UI.transform.position.x, UI.transform.position.y, UI.transform.position.z);//3.27.17
-      var temp= PhotonNetwork.Instantiate(UI.name, UI.transform.position, UI.transform.rotation, 0);
-
-       temp.transform.parent = parentobject.transform;
-       if(Count==0)//saying player one has joined
+           if (Count==0)//saying player one has joined
        Player.color = Color.green;
-       
+
+    //  Vector3 prefabPos = new Vector3(UI.transform.position.x, UI.transform.position.y, UI.transform.position.z);//3.27.17
+ 
+
+        p2Avatar.GetComponent<MeshRenderer>().enabled = false;//player 2 has not joined yet so no avatar
+
+
+      
+     
 
         Debug.Log("OnJoinedRoom()" + " Players:" + PhotonNetwork.countOfPlayers);
 
-        
 
 
 
@@ -91,9 +92,14 @@ public class NetManager : MonoBehaviour
             Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
             Timeout.instance.players = true;
             randomAsteroids.instance.stop = false;//starts asteroids
-         //   PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, Quaternion.identity, 0);
+                                                  // PhotonNetwork.Instantiate(p2Avatar.name, p2Avatar.transform.position, p2Avatar.transform.rotation, 0);
+          p2Avatar.GetComponent<MeshRenderer>().enabled = true;
+            //Player 2 UI count spawn
+            var OVRparent = PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, UI2.transform.rotation, 0);
+
+            OVRparent.transform.parent = parentobject.transform;
         }
-        else Timeout.instance.players = false;
+        else Timeout.instance.players = false;//stops time
 
     }
     void OnDisconnect()
@@ -116,7 +122,7 @@ public class NetManager : MonoBehaviour
         {      
              Player.color = Color.red;
             Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
-            Timeout.instance.players = false;//stops clock
+           // Timeout.instance.players = false;//stops clock
             Debug.Log("player2 dcd: now " + PhotonNetwork.isNonMasterClientInRoom.ToString());
         }
 
