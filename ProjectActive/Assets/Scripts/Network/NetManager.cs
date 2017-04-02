@@ -76,7 +76,9 @@ public class NetManager : MonoBehaviour
 
         Debug.Log("OnJoinedRoom()" + " Players:" + PhotonNetwork.countOfPlayers);
 
+        var OVRparent = PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, UI2.transform.rotation, 0);
 
+        OVRparent.transform.parent = parentobject.transform;
 
 
     }
@@ -89,15 +91,12 @@ public class NetManager : MonoBehaviour
             Count++;//count goes up and if player 1 leaves we will be notified
             //Player 2 lights up green indicating connection
             Player2.color = Color.green;
-            Debug.Log(" Players:" + PhotonNetwork.room.playerCount);
             Timeout.instance.players = true;
             randomAsteroids.instance.stop = false;//starts asteroids
                                                   // PhotonNetwork.Instantiate(p2Avatar.name, p2Avatar.transform.position, p2Avatar.transform.rotation, 0);
-          p2Avatar.GetComponent<MeshRenderer>().enabled = true;
+     //     p2Avatar.GetComponent<MeshRenderer>().enabled = true;
             //Player 2 UI count spawn
-            var OVRparent = PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, UI2.transform.rotation, 0);
-
-            OVRparent.transform.parent = parentobject.transform;
+          
         }
         else Timeout.instance.players = false;//stops time
 

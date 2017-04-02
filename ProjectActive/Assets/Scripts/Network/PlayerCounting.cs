@@ -7,15 +7,14 @@ public class PlayerCounting: Photon.MonoBehaviour {
 
     // Use this for initialization
     public Text CountingAsteroidText, CountingAsteroidText2;
-    private int networkcount;
    private string player1score, player2score;
-   private PhotonView view;
-   int i;
+    public static PlayerCounting instance;
+    private PhotonView view;
    // public int number;
 	void Start () {
         //   CountingAsteroidText = GameObject.Find("Playercount").GetComponentInChildren<Text>();
         view = new PhotonView();
-    
+        instance = this;
     }
 
 // Update is called once per frame
@@ -28,15 +27,11 @@ void Update () {
         {
             CountingAsteroidText.color = Color.green;
             CountingAsteroidText.text = SyncGazeExplosion.instance.Counting().ToString();
-
-          //  CountingAsteroidText2.text = player2score;//null?
-
-        }
-        else
-        {
             CountingAsteroidText2.color = Color.yellow;
-            CountingAsteroidText2.text = SyncGazeExplosion.instance.Counting().ToString();
+    
+
         }
+       
     
 
     
@@ -57,6 +52,7 @@ void Update () {
         Debug.Log("OnPhotonSerializeView()");
         if (stream.isWriting == true)
         {  //sends information to player 2 
+           // We own this player: send the others our data
             stream.SendNext(CountingAsteroidText.text);
          
 
@@ -65,9 +61,9 @@ void Update () {
         else  //issue
         {
 
-
-        //player 2 receives the information
-           CountingAsteroidText.text = (string)stream.ReceiveNext();
+            // Network player, receive data
+            //player 2 receives the information
+            CountingAsteroidText.text = (string)stream.ReceiveNext();
           
 
         }
@@ -75,8 +71,14 @@ void Update () {
 
 
     }
+
+ 
+
+
+
+
       
-    // ...
+    //4.2.17
 }
 
 

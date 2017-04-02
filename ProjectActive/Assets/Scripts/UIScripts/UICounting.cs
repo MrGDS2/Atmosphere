@@ -48,11 +48,11 @@ public class UICounting : Photon.MonoBehaviour {
               
                 break;
 
-            case "VRTogether":
+         //   case "VRTogether":
             //    if(photonView.isMine)
-                    Count.text = SyncGazeExplosion.instance.Counting().ToString() + "/30";
-               
-                break;
+                  //  Count.text = SyncGazeExplosion.instance.Counting().ToString() + "/30";
+         //      
+           //     break;
 
 
         }
