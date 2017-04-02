@@ -1,6 +1,5 @@
 Multiplayer 
- counts for player 1 and 2 
--but score not shown over the network
+player 2 won't count over network
 
 
 -Fix multiplayer mics

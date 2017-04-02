@@ -41,7 +41,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149568083994068}
-  m_LocalRotation: {x: 0.6987772, y: -0.049360376, z: 0.054726195, w: 0.71153295}
+  m_LocalRotation: {x: 0.6987772, y: -0.049360372, z: 0.05472619, w: 0.71153295}
   m_LocalPosition: {x: 1388, y: -13.322113, z: -1914.7393}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
@@ -188,6 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 1522688135499048, guid: c9c35d9cddbe32845b7cc1555c18a23e,
     type: 2}
+  UI: {fileID: 0}
+  parentobject: {fileID: 0}
   asteroid: {fileID: 1149568083994068}
   lookingTime: 0.5
   AsteroidSounds:
@@ -202,6 +204,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cb5cf0f59610f16478fbde191116e6e3, type: 3}
   - {fileID: 8300000, guid: b024f2d5cfa03e7429a41694469e74d8, type: 3}
   - {fileID: 8300000, guid: c7e572b255e311b479005985ed7f4ba2, type: 3}
+  networkcount: 0
 --- !u!114 &114873616272256830
 MonoBehaviour:
   m_ObjectHideFlags: 1
