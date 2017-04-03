@@ -26,7 +26,7 @@ public class Player2Count : Photon.MonoBehaviour
 
         if (!photonView.isMine)
         {
-            CountingAsteroidText2.color = Color.green;
+            CountingAsteroidText2.color = Color.white;
             CountingAsteroidText2.text = SyncGazeExplosion.instance.Counting().ToString();
             //   CountingAsteroidText.color = Color.yellow;
       

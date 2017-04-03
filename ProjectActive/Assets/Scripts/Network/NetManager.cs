@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class NetManager : MonoBehaviour
 {
 
-     public GameObject UI2,p2Avatar,parentobject;
+
     public Text Player;
     public Text Player2;
     private int Count;
@@ -61,24 +61,21 @@ public class NetManager : MonoBehaviour
 
     public void OnJoinedRoom()
     {
+       
         Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
            if (Count==0)//saying player one has joined
        Player.color = Color.green;
 
-    //  Vector3 prefabPos = new Vector3(UI.transform.position.x, UI.transform.position.y, UI.transform.position.z);//3.27.17
+        
  
 
-        p2Avatar.GetComponent<MeshRenderer>().enabled = false;//player 2 has not joined yet so no avatar
+    
 
 
       
      
 
         Debug.Log("OnJoinedRoom()" + " Players:" + PhotonNetwork.countOfPlayers);
-
-        var OVRparent = PhotonNetwork.Instantiate(UI2.name, UI2.transform.position, UI2.transform.rotation, 0);
-
-        OVRparent.transform.parent = parentobject.transform;
 
 
     }

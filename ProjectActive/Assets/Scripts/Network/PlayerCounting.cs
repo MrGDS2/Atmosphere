@@ -25,7 +25,7 @@ void Update () {
 
         if (photonView.isMine)
         {
-            CountingAsteroidText.color = Color.green;
+            CountingAsteroidText.color = Color.white;
             CountingAsteroidText.text = SyncGazeExplosion.instance.Counting().ToString();
             CountingAsteroidText2.color = Color.yellow;
     

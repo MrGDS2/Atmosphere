@@ -17,17 +17,19 @@ public class MirrorScript : Photon.MonoBehaviour
 
     }
     void Update()
-    {  
-     //   talk.Transmit = true;
+    {
+        //   talk.Transmit = true;
 
-       if (photonView.isMine) 
- //enables voice chat player 1
+        if (photonView.isMine)
+        {
+            //enables voice chat player 1
             GetComponent<PhotonVoiceRecorder>().enabled = true;
-        if (!photonView.isMine)
-            //enables voice chat player 2
+        }
+        else
+        {
             GetComponent<PhotonVoiceRecorder>().enabled = true;
 
-
+        }
 
     }
 
