@@ -88,23 +88,18 @@ public class NetManager : MonoBehaviour
             Count++;//count goes up and if player 1 leaves we will be notified
             //Player 2 lights up green indicating connection
             Player2.color = Color.green;
-            Timeout.instance.players = true;
-            randomAsteroids.instance.stop = false;//starts asteroids
-                                                  // PhotonNetwork.Instantiate(p2Avatar.name, p2Avatar.transform.position, p2Avatar.transform.rotation, 0);
-     //     p2Avatar.GetComponent<MeshRenderer>().enabled = true;
-            //Player 2 UI count spawn
+     
+  
           
         }
-        else Timeout.instance.players = false;//stops time
+    
 
     }
     void OnDisconnect()
     {
         
-        
-           // randomAsteroids.instance.stop = true;//stops asteroids
-        
-
+      
+      
        
         if (PhotonNetwork.room.playerCount < 2 &&
             PhotonNetwork.isNonMasterClientInRoom)     //player 2 DC'D =>disconnected

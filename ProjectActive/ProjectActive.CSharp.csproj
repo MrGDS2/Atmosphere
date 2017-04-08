@@ -270,9 +270,11 @@
     <Compile Include="Assets\Scripts\Network\NetManager.cs" />
     <Compile Include="Assets\Scripts\Network\Player2Count.cs" />
     <Compile Include="Assets\Scripts\Network\PlayerCounting.cs" />
+    <Compile Include="Assets\Scripts\Network\Results.cs" />
     <Compile Include="Assets\Scripts\Network\SyncGazeExplosion.cs" />
     <Compile Include="Assets\Scripts\Network\Timeout.cs" />
     <Compile Include="Assets\Scripts\Network\TrackAsteroids.cs" />
+    <Compile Include="Assets\Scripts\Network\reloadNetwork.cs" />
     <Compile Include="Assets\Scripts\Tutorial\BuildScreenTutorial.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Voicehelp.cs" />
     <Compile Include="Assets\Scripts\UIScripts\ButtonHover.cs" />
