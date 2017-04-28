@@ -84,8 +84,9 @@ public class PlayerCounting : Photon.MonoBehaviour
 
     void CheckWinner(string p1 ,string p2)
     {
+        //results to change scene
       
-      if(p1.Equals("3")|| p2.Equals("3"))
+      if(p1.Equals("10")|| p2.Equals("10"))
         {
             //swtich scene
             PhotonNetwork.LoadLevel(9);

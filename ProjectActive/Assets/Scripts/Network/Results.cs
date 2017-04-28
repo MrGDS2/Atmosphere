@@ -41,7 +41,9 @@ public class Results : MonoBehaviour
     void CheckWinner(string p1, string p2)
     {
 
-        if (p1.Equals("3"))
+        //results to display
+
+        if (p1.Equals("10"))
         {
 
           playerwins.text = "Player 1 Wins";
@@ -54,7 +56,7 @@ public class Results : MonoBehaviour
            
         
 
-     if (p2.Equals("3"))
+     if (p2.Equals("10"))
         {
 
             playerwins.text = "Player 2 Wins";

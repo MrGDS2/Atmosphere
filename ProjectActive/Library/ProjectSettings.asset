@@ -120,7 +120,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.meilobyte.samuels
-  bundleVersion: 1.5
+  bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -198,8 +198,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 1
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: E:/Documents/GitHub/GearVRproject/ProjectActive/atmosphere.keystore
+  AndroidKeyaliasName: atmosphere
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
